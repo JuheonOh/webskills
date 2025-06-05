@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{box-sizing:border-box; padding:0; margin:0;}
+body{font-family:'맑은 고딕'; font-size:0.88em; color:#333;}
+fieldset{border:0}
+legend{display:none}
+a{text-decoration:none; color:#666}
+a:hover{text-decoration:none; color:#999}
+
+
+/*Screen*/
+.screen{width:100%; height:100%; position:absolute}
+
+	/*Bar*/
+	.bar{width:100%; line-height:50px; background:#000; position:fixed; z-index:400}
+		.bar-inner{max-width:1700px; margin:0 auto;}
+		.bar-inner a img{vertical-align:middle;}
+		.bar-inner .left-btn{width:20%; float:left; text-align:left; padding-left:20px;}
+		.bar-inner .center-title{width:60%; float:left; font-size:1.25em; color:#fff; font-weight:bold; text-align:center}
+		.bar-inner .right-btn{width:20%; float:left; text-align:right; padding-right:20px;}
+	.wrap{width:1200px; height:100%; margin:0 auto; position:relative; padding-top:70px; background:none; overflow-x:hidden;}
+
+
+
+/* INIT */
+svg { max-width:100%; }
+.middle { float:left; width:300%; }
+section { float:left; width:calc(100% / 3); }
+ul, ol, li { list-style: none; }
+
+/* INFO */
+#info { float:left; width:100%; }
+#info .image { float:left; width:100%; text-align: center; }
+#info .text { float:left; width:100%; }
+#info .text ul { float:left; width:100%; padding:20px 0; }
+
+/* GALLERY */
+#gallery { float:left; width:100%; border-top :1px solid #bfbfbf; padding-top:20px; margin-top:20px; }
+#gallery li { float:left; width:calc(100% / 3 - 60px); height:300px; margin:0 30px; position: relative; margin-bottom:60px; }
+#gallery li img { float:left; width:100%; height:100%; cursor: pointer; }
+#gallery li img.playBtn { position: absolute; left:50%; top:50%; transform: translate(-50%, -50%); z-index:100; width:70px; height:70px; }
+#gallery li img.previewImg { position: absolute; left:0; top:0; }
+
+/* LOGINBOX */
+#loginBox { width:25%; margin:0 auto; }
+.loginBox { float:left; width:100%; }
+.loginBox li { float:left; width:100%; margin-bottom:5px; }
+.loginBox li input { float:left; width:100%; height:35px; padding:0 5px; border:1px solid #bfbfbf; }
+#loginBox button { float:left; width:100%; height:35px; border:1px solid #fff; background-color:#ff9900; color:#fff; }
+
+/* ADD BOX */
+.add { float:left; width:100%; }
+#location { width:30%; height:40px; margin:0 auto; display:block; padding:0 10px; }
+#drop { width:70%; line-height:400px; background-color:#eee; border:1px solid #bfbfbf; margin:0 auto; margin-top:40px; text-align: center; font-size:20px; }
+#drop:before { content: "파일을 드래그하여 이곳에 놓아주세요." }
+#drop.hover { background-color:#ff9900; color:#fff; font-weight: bold; }
+#drop.hover:before { content: "마우스를 놓아주세요"; }
+
+/* DIALOG IMG */
+#dialog img { max-width:500px; max-height:500px; }
+
+/* Display none */
+.dn { display:none !important; }
