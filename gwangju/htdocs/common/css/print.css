@@ -1,0 +1,4 @@
+#header, .sub_menu, .sub_font, .sub_page, #footer  { display:none; }
+#animation { margin-top:0px;  height:80px; background-image:none; }
+#sub_slide_parent { background-image:none; margin-left:0px; }
+.title { text-align:left; padding-left:0px; margin-top:20px; color:#000; }

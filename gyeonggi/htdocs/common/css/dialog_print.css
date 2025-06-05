@@ -1,0 +1,2 @@
+#wrap, .ui-widget-overlay { display:none; }
+.ui-dialog { display:block; margin-left:-600px; }

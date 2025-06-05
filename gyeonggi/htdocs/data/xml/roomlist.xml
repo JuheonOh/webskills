@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<roomlist>
+	<room>
+		<image>1111151_69665882.jpg</image>
+		<title>모던한 식기가 가지런한 옥내 테이블</title>
+		<cleanday>월요일</cleanday>
+		<cost>120000원</cost>
+	</room>
+	<room>
+		<image>1306681_69145046.jpg</image>
+		<title>모여앉아 화목한 다목적 테이블</title>
+		<cleanday>목요일</cleanday>
+		<cost>90000원</cost>
+	</room>
+	<room>
+		<image>1351819_10121866.jpg</image>
+		<title>맛있는 고기와 함께하는 옥외 테이블</title>
+		<cleanday>수요일</cleanday>
+		<cost>150000원</cost>
+	</room>
+	<room>
+		<image>1381101_52402725.jpg</image>
+		<title>단체 회원이 좋아하는 지하실 테이블</title>
+		<cleanday>화요일</cleanday>
+		<cost>160000원</cost>
+	</room>
+</roomlist>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<foodlist>
+	<food>
+		<title>7성급 주방장이 만든 LA 폭립구이</title>
+		<description>7성급 주방장이 만드는 오랜 손맛, 특별한 전통을 느껴보세요</description>
+		<image>1105303_63101294.jpg</image>
+		<type>메인요리</type>
+		<cost>23500</cost>
+	</food>
+	<food>
+		<title>제철과일로 만든 과일 타르트</title>
+		<description>제철과일이 풍기는 자연의 내음, 달콤한 자연에 빠져보세요</description>
+		<image>982983_74740550.jpg</image>
+		<type>후식</type>
+		<cost>7500</cost>
+	</food>
+	<food>
+		<title>제빵 명장이 만드는 초코 케이크</title>
+		<description>한땀한땀 장인정신이 깃든 맛있는 달콤함을 경험 하시길 바랍니다.</description>
+		<image>982974_80209961.jpg</image>
+		<type>메인요리</type>
+		<cost>13000</cost>
+	</food>
+	<food>
+		<title>자연의 색차가 싱그러운 야채쌈</title>
+		<description>싱그러운 자연이 들어가있는 웰빙 건강식 입니다.</description>
+		<image>1426606_21894496.jpg</image>
+		<type>전채요리</type>
+		<cost>6500</cost>
+	</food>
+	<food>
+		<title>추운 칼바람을 맞고 자란 딸기 디저트</title>
+		<description>자연산 산딸기로 만든 웰빙 디저트 입니다.</description>
+		<image>966655_98929460.jpg</image>
+		<type>후식</type>
+		<cost>7700</cost>
+	</food>
+	<food>
+		<title>커피를 갈아 만든 소프트 케잌</title>
+		<description>커피의 진한 내음이 케잌에 베어있습니다.</description>
+		<image>966656_11415497.jpg</image>
+		<type>전채요리</type>
+		<cost>11000</cost>
+	</food>
+	<food>
+		<title>보르도 지방에서 막들어온 와인</title>
+		<description>보르도 장인들이 만들었습니다. 품질보장. </description>
+		<image>645070_58308691.jpg</image>
+		<type>음료</type>
+		<cost>79000</cost>
+	</food>
+	<food>
+		<title>부드러운 끝맛의 사과 샴페인</title>
+		<description>사과의 상큼함이 샴페인에 들어갔습니다.</description>
+		<image>774817_82519933.jpg</image>
+		<type>음료</type>
+		<cost>66500</cost>
+	</food>
+</foodlist>

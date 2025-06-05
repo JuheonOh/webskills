@@ -1,0 +1,13 @@
+<div class="login">
+    <form id="login_frm" action="#" method="post" onSubmit="return frmChk(this, 'userid', 'pw');">
+        <div>
+            <input type="hidden" name="action" value="login">
+            <input type="hidden" name="table" value="member">
+        </div>
+        <ul class="login_box">
+        	<li><label for="userid"><input type="text" name="userid" id="userid" title="아이디" placeholder="아이디"></label></li>
+            <li><label for="pw"><input type="password" name="pw" id="pw" title="비밀번호" placeholder="비밀번호"></label></li>
+        </ul>
+        <div class="submit"><input type="submit" title="로그인" value="로그인"></div>
+    </form>
+</div>
