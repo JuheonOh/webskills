@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>제주관광</title>
+	<link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link href="font-awesome-4.4.0/font-awesome-4.4.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+	<script src="jquery/jquery-3.2.1.js"></script>
+	<script src="jquery/jquery-ui-1.12.1/jquery-ui.js"></script>
+	<script src="js/common.js"></script>
+</head>
+<body>
+	<div class="loading">
+		<p>LOADING...</p>
+	</div>
+
+	<!-- background -->
+	<div class="bg">
+		<span><i class="fa fa-home"></i></span>
+	
+		<!-- LOGIN -->
+		<div class="login">
+			<div>
+				<div>
+					<h1>로그인</h1>
+					<h3>로그인을 하여 댓글을 남겨보세요!</h3>
+				</div>
+				<form id="loginFrm" method="post">
+					<div>
+						<input type='text' id='login_userid' placeholder='아이디' required />
+						<input type='password' id='login_pw' placeholder='비밀번호' required />
+						<button type='submit'><h2>로그인</h2></button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="join">
+			<div>
+				<div>
+					<h1>회원가입</h1>
+					<h3>회원가입을 하여 댓글을 남겨보세요!</h3>
+				</div>
+				<div class="jo_co">
+					<form id="joinFrm" method="post">
+						<ul>
+							<li><label for="jo_id">아이디 : </label><input type="text" id="join_userid"  placeholder="아이디" required></li>
+							<li><label for="jo_pw">비밀번호 : </label><input type="text" id="join_pw"  placeholder="비밀번호" required></li>
+							<li><label for="jo_pw_chk">비밀번호확인 : </label><input type="text" id="join_pw2"  placeholder="비밀번호 확인" required></li>
+							<li><label for="jo_name">이름 : </label><input type="text" id="join_username" placeholder="이름" required></li>
+							<li><label for="jo_phone">전화번호 : </label><input type="text" id="join_phone" placeholder="전화번호" required></li>
+							<button>회원가입</button>
+						</ul>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- MORE -->
+		<div class="more view">
+			<div class="more_image">
+				<img src="images/1.jpg" alt="jpg" title="title">
+			</div>
+			<div class="more_content">
+				<h1></h1>
+				<div class="more_line"></div>
+				<div>
+					<p></p>
+					<h3></h3>
+				</div>
+				<div class="comment">
+					<form id="commentFrm" method="post">
+						<input type="hidden" name="lidx">
+						<input type="text" id="comment" placeholder="댓글을 입력해주세요." required>
+						<button type="submit">작성</button>
+					</form>
+				</div>
+				<button type="button" class="modi_view">정보수정</button>
+				<div class="commentList">
+					
+				</div>
+				
+			</div>
+		</div>
+
+		<!-- modi MORE -->
+		<div class="more modi">
+			<div class="more_image">
+				<img src="images/1.jpg" alt="jpg" title="title">
+			</div>
+			<div class="more_content">
+				<form id="modiFrm" method="post">
+					<input type="hidden" name="oldName">
+					<input type="hidden" name="lidx">
+					<input type="text" required>
+					<div class="more_line"></div>
+					<textarea required></textarea>
+					<input type="file" id="file">
+					<button type="submit" class="modiOkBtn">정보수정</button>
+					<div class="more_line"></div>
+				</form>
+
+				<p>※ 파일 선택 버튼을 눌러 이미지를 변경할 수 있습니다.</p>
+				<p>※ 파일을 선택하여 변경할 사진을 미리 볼 수 있습니다.</p>
+				<p>※ 정보수정 버튼을 눌러야 최종적으로 수정이 완료됩니다.</p>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- header -->
+	<div class="col-md-12 header">
+		<div class="container">
+			<div class="row">
+				<form id="searchFrm" method="post">
+					<div class="search-form">
+						<input type="text" id="search" placeholder="검색어을 입력해 주세요.">
+						<button type="submit"><span><i class="fa fa-search"></i></span></button>
+					</div>
+				</form>
+				<div class="membership">
+					<button class="login_btn"><h2>로그인</h2></button>
+					<button class="logout_btn"><h2>로그아웃</h2></button>
+					<button class="join_btn"><h2>회원가입</h2></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- content -->
+	<div class="col-md-12 content">
+		<div class="container">
+			<div class="row">
+				<!-- left content categories -->
+				<div class="col-md-2 left_content">
+					<div class="row">
+						<div class="categories">
+							<h3>카테고리</h3>
+							<ul>
+								<li><i class="fa fa-camera"></i>관광지</li>
+								<li><i class="fa fa-bank"></i>박물관</li>
+								<li><i class="fa fa-tree"></i>공원</li>
+								<li><i class="fa fa-futbol-o"></i>체육관</li>
+								<li><i class="fa fa-road"></i>교통</li>
+								<li><i class="fa fa-ship"></i>주변 섬</li>
+								<li><i class="fa fa-pagelines"></i>특산물 · 기념품</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<!-- new feed -->
+				<div class="col-md-6 newsfeed">
+					<div class="row">
+						<!-- logo -->
+						<div class="col-md-12 feed_title logo box">
+							<h3>제주 위키에 오신 것을 환영합니다! 제주도의 정보를 찾아보세요!</h3>
+						</div>
+
+						<div id="list">
+						
+						</div>
+
+
+					</div>
+				</div>
+
+
+				<!-- right content new board -->
+				<div class="col-md-3 col-right new_board">
+					<div class="new_wiki box">
+						<h2>최근 수정된 정보</h2>	
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
