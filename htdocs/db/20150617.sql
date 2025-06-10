@@ -1,23 +1,24 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
--- http://www.phpmyadmin.net
+-- version 5.2.2
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: 15-07-10 08:03
--- 서버 버전: 5.6.16
--- PHP Version: 5.5.11
+-- 호스트: mysql
+-- 생성 시간: 25-06-10 15:48
+-- 서버 버전: 9.3.0
+-- PHP 버전: 8.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `20150617`
+-- 데이터베이스: `20150617`
 --
 
 -- --------------------------------------------------------
@@ -26,14 +27,13 @@ SET time_zone = "+00:00";
 -- 테이블 구조 `car`
 --
 
-CREATE TABLE IF NOT EXISTS `car` (
-  `cidx` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `car` (
+  `cidx` int NOT NULL,
   `carname` varchar(100) NOT NULL,
   `color` varchar(100) NOT NULL,
   `fuel` varchar(100) NOT NULL,
-  `carnumber` varchar(100) NOT NULL,
-  PRIMARY KEY (`cidx`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=217 ;
+  `carnumber` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- 테이블의 덤프 데이터 `car`
@@ -119,8 +119,8 @@ INSERT INTO `car` (`cidx`, `carname`, `color`, `fuel`, `carnumber`) VALUES
 -- 테이블 구조 `main3sub1`
 --
 
-CREATE TABLE IF NOT EXISTS `main3sub1` (
-  `midx` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `main3sub1` (
+  `midx` int NOT NULL,
   `carname` varchar(100) NOT NULL,
   `color` varchar(100) NOT NULL,
   `fuel` varchar(100) NOT NULL,
@@ -128,9 +128,8 @@ CREATE TABLE IF NOT EXISTS `main3sub1` (
   `userid` varchar(100) NOT NULL,
   `st_date` date NOT NULL,
   `en_date` date NOT NULL,
-  `date` date NOT NULL,
-  PRIMARY KEY (`midx`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- 테이블의 덤프 데이터 `main3sub1`
@@ -139,7 +138,8 @@ CREATE TABLE IF NOT EXISTS `main3sub1` (
 INSERT INTO `main3sub1` (`midx`, `carname`, `color`, `fuel`, `carnumber`, `userid`, `st_date`, `en_date`, `date`) VALUES
 (1, '그랜져/Grandeur', '검정', '경유', '18허5982', 'admin', '2015-06-23', '2015-06-29', '2015-06-22'),
 (2, '그랜드 스타렉스/Grand Starex', '흰색', '경유', '18허8533', 'admin', '2015-06-24', '2015-06-30', '2015-06-22'),
-(3, '그랜져/Grandeur', '검정', '하이브리드', '97허6702', 'admin', '2015-06-24', '2015-06-30', '2015-06-22');
+(3, '그랜져/Grandeur', '검정', '하이브리드', '97허6702', 'admin', '2015-06-24', '2015-06-30', '2015-06-22'),
+(4, '에쿠스/Equss', '검정', '휘발유', '82허2252', 'user', '2025-06-11', '2025-06-13', '2025-06-10');
 
 -- --------------------------------------------------------
 
@@ -147,15 +147,14 @@ INSERT INTO `main3sub1` (`midx`, `carname`, `color`, `fuel`, `carnumber`, `useri
 -- 테이블 구조 `member`
 --
 
-CREATE TABLE IF NOT EXISTS `member` (
-  `idx` int(11) NOT NULL AUTO_INCREMENT,
-  `userid` varchar(100) NOT NULL,
-  `pw` varchar(100) NOT NULL,
-  `cellular` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `lv` varchar(100) NOT NULL,
-  PRIMARY KEY (`idx`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+CREATE TABLE `member` (
+  `idx` int NOT NULL,
+  `userid` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT '',
+  `pw` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT '',
+  `cellular` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT '',
+  `email` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT '',
+  `lv` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- 테이블의 덤프 데이터 `member`
@@ -163,7 +162,8 @@ CREATE TABLE IF NOT EXISTS `member` (
 
 INSERT INTO `member` (`idx`, `userid`, `pw`, `cellular`, `email`, `lv`) VALUES
 (1, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', '비공개', '비공개', '관리자'),
-(3, 'test', '81dc9bdb52d04dc20036dbd8313ed055', '1234', '12354', '');
+(3, 'test', '81dc9bdb52d04dc20036dbd8313ed055', '1234', '12354', ''),
+(4, 'user', '81dc9bdb52d04dc20036dbd8313ed055', '01012341234', 'user@user.com', '');
 
 -- --------------------------------------------------------
 
@@ -171,15 +171,14 @@ INSERT INTO `member` (`idx`, `userid`, `pw`, `cellular`, `email`, `lv`) VALUES
 -- 테이블 구조 `menu`
 --
 
-CREATE TABLE IF NOT EXISTS `menu` (
-  `idx` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `menu` (
+  `idx` int NOT NULL,
   `parent` varchar(100) NOT NULL,
   `child` varchar(100) NOT NULL,
   `title` varchar(100) NOT NULL,
   `contents` text NOT NULL,
-  `type` varchar(100) NOT NULL,
-  PRIMARY KEY (`idx`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+  `type` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- 테이블의 덤프 데이터 `menu`
@@ -208,12 +207,11 @@ INSERT INTO `menu` (`idx`, `parent`, `child`, `title`, `contents`, `type`) VALUE
 -- 테이블 구조 `slide`
 --
 
-CREATE TABLE IF NOT EXISTS `slide` (
-  `sidx` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `slide` (
+  `sidx` int NOT NULL,
   `file` varchar(100) NOT NULL,
-  `type` int(11) NOT NULL,
-  PRIMARY KEY (`sidx`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
+  `type` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- 테이블의 덤프 데이터 `slide`
@@ -225,6 +223,75 @@ INSERT INTO `slide` (`sidx`, `file`, `type`) VALUES
 (3, 'slide3.jpg', 1),
 (27, '20150624_13976.jpg', 0),
 (28, '20150624_27649.jpg', 1);
+
+--
+-- 덤프된 테이블의 인덱스
+--
+
+--
+-- 테이블의 인덱스 `car`
+--
+ALTER TABLE `car`
+  ADD PRIMARY KEY (`cidx`);
+
+--
+-- 테이블의 인덱스 `main3sub1`
+--
+ALTER TABLE `main3sub1`
+  ADD PRIMARY KEY (`midx`);
+
+--
+-- 테이블의 인덱스 `member`
+--
+ALTER TABLE `member`
+  ADD PRIMARY KEY (`idx`);
+
+--
+-- 테이블의 인덱스 `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`idx`);
+
+--
+-- 테이블의 인덱스 `slide`
+--
+ALTER TABLE `slide`
+  ADD PRIMARY KEY (`sidx`);
+
+--
+-- 덤프된 테이블의 AUTO_INCREMENT
+--
+
+--
+-- 테이블의 AUTO_INCREMENT `car`
+--
+ALTER TABLE `car`
+  MODIFY `cidx` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=217;
+
+--
+-- 테이블의 AUTO_INCREMENT `main3sub1`
+--
+ALTER TABLE `main3sub1`
+  MODIFY `midx` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- 테이블의 AUTO_INCREMENT `member`
+--
+ALTER TABLE `member`
+  MODIFY `idx` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- 테이블의 AUTO_INCREMENT `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `idx` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- 테이블의 AUTO_INCREMENT `slide`
+--
+ALTER TABLE `slide`
+  MODIFY `sidx` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
