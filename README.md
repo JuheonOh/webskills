@@ -1,6 +1,29 @@
 # 웹디자인 및 개발
 
-- 출처: [웹디자인 및 개발 직종설명서](https://meister.hrdkorea.or.kr/uploads/jobMenual/N_563_%EC%9B%B9%EB%94%94%EC%9E%90%EC%9D%B8%EB%B0%8F%EA%B0%9C%EB%B0%9C.zip) 발췌
+## 대회과제 풀이 바로가기
+
+- [2014년 전국대회 - (DreamRentacar)](https://github.com/JuheonOh/webskills/tree/2014_%EC%A0%84%EA%B5%AD)
+- [2015년 지방대회 - (드림파크 국화축제)](https://github.com/JuheonOh/webskills/tree/2015_%EC%A7%80%EB%B0%A9)
+- [2015년 전국대회 - (Quiabeiro Restaurante Gourmet)](https://github.com/JuheonOh/webskills/tree/2015_%EC%A0%84%EA%B5%AD)
+  - [충북](https://github.com/JuheonOh/webskills/tree/2015_%EC%A0%84%EA%B5%AD/chungbuk)
+  - [광주](https://github.com/JuheonOh/webskills/tree/2015_%EC%A0%84%EA%B5%AD/gwangju)
+  - [경기](https://github.com/JuheonOh/webskills/tree/2015_%EC%A0%84%EA%B5%AD/gyeonggi)
+- [2016년 지방대회 - (Web-Design MOOC)](https://github.com/JuheonOh/webskills/tree/2016_%EC%A7%80%EB%B0%A9)
+- [2016년 전국대회](https://github.com/JuheonOh/webskills/tree/2016_%EC%A0%84%EA%B5%AD)
+  - [1과제 Website Design - (서울인재지원센터 - helper)](https://github.com/JuheonOh/webskills/tree/2016_%EC%A0%84%EA%B5%AD/1_WebsiteDesign)
+  - [2과제 Website Layout - (아름누리예술재단)](https://github.com/JuheonOh/webskills/tree/2016_%EC%A0%84%EA%B5%AD/2_WebsiteLayout)
+  - [3과제 Client Side - (인사이드서울)](https://github.com/JuheonOh/webskills/tree/2016_%EC%A0%84%EA%B5%AD/3_WebsiteDevelopment)
+  - [4과제 Server Side - (EV 셰어링)](https://github.com/JuheonOh/webskills/tree/2016_%EC%A0%84%EA%B5%AD/4_ServerSide)
+- [2017년 지방대회](https://github.com/JuheonOh/webskills/tree/2017_%EC%A7%80%EB%B0%A9)
+  - [1과제 Website Design - (미니 드론 랜딩페이지)](https://github.com/JuheonOh/webskills/tree/2017_%EC%A7%80%EB%B0%A9/1_WebsiteDesign)
+  - [2과제 Website Layout - (Seoul Travel)](https://github.com/JuheonOh/webskills/tree/2017_%EC%A7%80%EB%B0%A9/2_WebsiteLayout)
+  - [3과제 Client Side - (Webdesign Intro)](https://github.com/JuheonOh/webskills/tree/2017_%EC%A7%80%EB%B0%A9/3_ClientSide)
+  - [4과제 Server Side - (Our Blog)](https://github.com/JuheonOh/webskills/tree/2017_%EC%A7%80%EB%B0%A9/4_ServerSide)
+- [2017년 전국대회](https://github.com/JuheonOh/webskills/tree/2017_%EC%A0%84%EA%B5%AD)
+  - [1과제 Website Design - (제주영귤농원)](https://github.com/JuheonOh/webskills/tree/2017_%EC%A0%84%EA%B5%AD/1_WebsiteDesign)
+  - [2과제 Website Layout - (제주도 관광가이드)](https://github.com/JuheonOh/webskills/tree/2017_%EC%A0%84%EA%B5%AD/2_WebsiteLayout)
+  - [3과제 Client Side - (제주위키)](https://github.com/JuheonOh/webskills/tree/2017_%EC%A0%84%EA%B5%AD/3_ClientSide)
+  - [4과제 Server Side - (제주호텔)](https://github.com/JuheonOh/webskills/tree/2017_%EC%A0%84%EA%B5%AD/4_ServerSide)
 
 ## 직종정의
 
@@ -50,3 +73,7 @@
 - 서버 측 파일 관리(업로드, 수정, 압축 등)나 이미지 처리 프로그램, 웹서버 관리자 프로그램 등을 구현한다.
 
 - 서버측 프로그래밍을 통해 제공된 정보를 형식과 구조에 부합하도록 데이터베이스에 삽입하여 활용하고, 필요한 경우 데이터베이스에 저장된 데이터를 HTML, XML, CSV, PDF, JSON, XLSX 등의 파일형태로 생성하여 반환한다.
+
+## 자료 출처
+
+- 직종정의, 작업범위 설명은 마이스터넷의 [웹디자인 및 개발 직종설명서](https://meister.hrdkorea.or.kr/uploads/jobMenual/N_563_%EC%9B%B9%EB%94%94%EC%9E%90%EC%9D%B8%EB%B0%8F%EA%B0%9C%EB%B0%9C.zip)에서 발췌하였습니다.
