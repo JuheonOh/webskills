@@ -12,7 +12,7 @@
 - [2016년 전국대회](https://github.com/JuheonOh/webskills/tree/2016_%EC%A0%84%EA%B5%AD)
   - [1과제 Website Design - (서울인재지원센터 - helper)](https://github.com/JuheonOh/webskills/tree/2016_%EC%A0%84%EA%B5%AD/1_WebsiteDesign)
   - [2과제 Website Layout - (아름누리예술재단)](https://github.com/JuheonOh/webskills/tree/2016_%EC%A0%84%EA%B5%AD/2_WebsiteLayout)
-  - [3과제 Client Side - (인사이드서울)](https://github.com/JuheonOh/webskills/tree/2016_%EC%A0%84%EA%B5%AD/3_WebsiteDevelopment)
+  - [3과제 Client Side - (인사이드서울)](https://github.com/JuheonOh/webskills/tree/2016_%EC%A0%84%EA%B5%AD/3_ClientSide)
   - [4과제 Server Side - (EV 셰어링)](https://github.com/JuheonOh/webskills/tree/2016_%EC%A0%84%EA%B5%AD/4_ServerSide)
 - [2017년 지방대회](https://github.com/JuheonOh/webskills/tree/2017_%EC%A7%80%EB%B0%A9)
   - [1과제 Website Design - (미니 드론 랜딩페이지)](https://github.com/JuheonOh/webskills/tree/2017_%EC%A7%80%EB%B0%A9/1_WebsiteDesign)
