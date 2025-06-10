@@ -1,0 +1,556 @@
+/* Init */
+* { margin:0; padding:0; box-sizing: border-box; font-family: "Malgun Gothic"; }
+html, body { width:100%; height:100%; overflow: hidden; }
+body { font-size:14px; animation:bgImage 4s infinite; background-size: cover; background-repeat: no-repeat; }
+ul, ol, li { list-style: none; }
+a { text-decoration: none; color:#000; }
+img { border:0; }
+input[type=radio] { display:none; }
+
+
+
+
+/* Background Image Keyframes
+@keyframes bgImage {
+	0% { background-image:url("../images/bg.jpg"); }
+	25% { background-image:url("../images/bg3.png"); }
+	50% { background-image:url("../images/bg2.png"); }
+	75% { background-image:url("../images/bg1.png"); }
+	100% { background-image:url("../images/bg.jpg"); }
+}
+
+*/
+
+
+
+
+
+
+
+/* Layout */
+#wrap { min-width:1500px; height:100%; perspective: 10px; perspective-origin: 0 0; overflow-x: hidden; overflow-y:auto; }
+.wrap { max-width:1500px; margin:0 auto; }
+#shadowBox { float:left; width:100%; height:100%; box-shadow: 0px 0px 20px #333; background-color:#fff; margin:70px 0; }
+#header { float:left; width:100%; }
+#contents { float:left; width:100%; overflow: hidden; }
+#footer { float:left; width:100%; }
+
+
+
+
+
+
+
+/* LOGO */
+#logo { float:left; margin-left:30px; margin-top:10px; }
+#logo a { float:left; font-weight: normal; color:#fc7171; }
+
+
+
+
+
+
+
+
+
+
+
+/* Navigation */
+#menu { float:right; }
+.menu { float:left; margin-right:50px; }
+.menu > li { float:left; line-height: 100px; position: relative; }
+.menu > li > .colorBox { position: absolute; left:0; top:100%; width:100px; height:150px; transform: rotateZ(90deg); transform-origin: 0 0; transition: all .5s; z-index:0; opacity: 0; background-color:rgba(255, 169, 169, 0.3); cursor: pointer; }
+.menu > li > a { float:left; width:150px; height:100px; background-color:#fff; position: relative; z-index:5; padding:0 20px; text-align: center; }
+.menu > li > ul { position: absolute; left:0; bottom:60px; z-index:4; width:100%; }
+.menu > li > ul > li { position:absolute; top:0; width:100%; line-height: 40px; border-bottom:2px solid #ff9a9a; }
+.menu > li > ul > li > a { float:left; width:100%; height:100%; font-size:12px; text-align: center; color:#000; background-color:rgba(255,255,255,0.5); }
+
+.menu > li > ul > li:nth-child(1) { z-index:3; transition: all 0.5s; }
+.menu > li > ul > li:nth-child(2) { z-index:2; transition: all 1s; }
+.menu > li > ul > li:nth-child(3) { z-index:1; transition: all 1.5s; }
+
+.menu > li:hover > .colorBox { transform: rotateZ(270deg); opacity: 1; z-index:6; }
+.menu > li:hover > ul > li:nth-child(1) { top:60px; z-index:13; }
+.menu > li:hover > ul > li:nth-child(2) { top:102px; z-index:12; }
+.menu > li:hover > ul > li:nth-child(3) { top:142px; z-index:11; }
+
+
+
+
+
+
+
+
+/* Main Visual */
+#animation { float:left; width:100%; height:400px; position: relative; perspective: 800px; }
+#slideControl label { position: absolute; right:0; top:50%; line-height: 400px; transform: translateY(-50%); z-index:100; padding:0 10px; background-color:rgba(0, 0, 0, 0.2); cursor: pointer; color:#fff; transition: all.5s; }
+#slideControl label:hover { background-color:rgba(0,0,0,0.7); }
+#slide { float:left; width:100%; height:100%; position: relative; }
+#slide li { position: absolute; left:0; top:0; width:50%; height:100%; background-repeat: no-repeat; }
+#slide .left { background-image:url("../images/background.jpg"); }
+#slide .right { left:50%; transform-style: preserve-3d; transition:transform 1s, z-index 0s; transition-delay: 0s, 1s; transform-origin: 0 0; }
+#slide figure { position: absolute; left:0; top:0; width:100%; height:100%; backface-visibility: hidden; }
+#slide figure.front { background-position: -750px 0; }
+
+#image1 { z-index:4; }
+#image2 { z-index:3; }
+#image3 { z-index:2; }
+#image4 { z-index:1; }
+
+#image1 .front { background-image: url("../images/background.jpg"); }
+#image1 .back { background-image: url("../images/background2.jpg"); transform: rotateY(-180deg); }
+
+#image2 .front { background-image: url("../images/background2.jpg"); }
+#image2 .back { background-image: url("../images/background3.jpg"); transform: rotateY(-180deg); }
+
+#image3 .front { background-image: url("../images/background3.jpg"); }
+#image3 .back { background-image: url("../images/background.jpg"); transform: rotateY(-180deg); }
+
+#image4 .front { background-image: url("../images/background.jpg"); }
+
+#slide1:checked ~ #slideControl #goSlide2 { display:block; }
+#slide1:checked ~ #slideControl #goSlide3 { display:none; }
+#slide1:checked ~ #slideControl #goSlide4 { display:none; }
+#slide1:checked ~ #slide #image1 { z-index:4; }
+#slide1:checked ~ #slide #image2 { z-index:3; }
+#slide1:checked ~ #slide #image3 { z-index:2; }
+#slide1:checked ~ #slide #image4 { z-index:1; }
+
+
+#slide2:checked ~ #slideControl #goSlide2 { display:none; }
+#slide2:checked ~ #slideControl #goSlide3 { display:block; }
+#slide2:checked ~ #slideControl #goSlide4 { display:none; }
+#slide2:checked ~ #slide #image1 { transform: rotateY(-180deg); }
+#slide2:checked ~ #slide #image1 { z-index:1; }
+#slide2:checked ~ #slide #image2 { z-index:4; }
+#slide2:checked ~ #slide #image3 { z-index:3; }
+#slide2:checked ~ #slide #image4 { z-index:2; }
+
+#slide3:checked ~ #slideControl #goSlide2 { display:none; }
+#slide3:checked ~ #slideControl #goSlide3 { display:none; }
+#slide3:checked ~ #slideControl #goSlide4 { display:block; }
+#slide3:checked ~ #slide #image1 { transform: rotateY(-180deg); }
+#slide3:checked ~ #slide #image2 { transform: rotateY(-180deg); }
+#slide3:checked ~ #slide #image1 { z-index:1; }
+#slide3:checked ~ #slide #image2 { z-index:3; }
+#slide3:checked ~ #slide #image3 { z-index:3; }
+#slide3:checked ~ #slide #image4 { z-index:2; }
+
+#slide4:checked ~ #slideControl #goSlide2 { display:none; }
+#slide4:checked ~ #slideControl #goSlide3 { display:none; }
+#slide4:checked ~ #slideControl #goSlide4 { display:block; }
+#slide4:checked ~ #slide #image1 { transform: rotateY(-180deg); }
+#slide4:checked ~ #slide #image2 { transform: rotateY(-180deg); }
+#slide4:checked ~ #slide #image3 { transform: rotateY(-180deg); }
+#slide4:checked ~ #slide #image1 { z-index:2; }
+#slide4:checked ~ #slide #image2 { z-index:1; }
+#slide4:checked ~ #slide #image3 { z-index:4; }
+#slide4:checked ~ #slide #image4 { z-index:3; }
+
+
+
+
+
+
+
+
+
+
+/* Section 1 */
+#sec1 { float:left; width:100%; }
+#sec1 h2 { float:left; width:100%; text-align: center; font-size:35px; line-height: 100px; transition: height .5s; }
+#sec1 .row { float:left; width:100%; height:300px; padding:0 20px; }
+#sec1 .row li { float:left; width:calc(50% - 10px); height:100%; margin:0 5px; position: relative; }
+#sec1 .row li .image { float:left; width:100%; height:100%; overflow: hidden; }
+#sec1 .row li .image img { float:left; width:100%; transform: translateZ(-2px) scale(2); }
+#sec1 .row li .text { position: absolute; left:0; top:0; width:100%; height:100%; background-color:rgba(0, 0, 0, 0.3); text-align: center; color:#fff; }
+#sec1 .row li .text h3 { margin-top:130px; }
+#sec1 .row li .text p { margin-top:15px; }
+
+
+
+
+
+
+
+
+
+/* Section 2 */
+#sec2 { float:left; width:100%; margin-top:40px; }
+#sec2 > .bg { float:left; width:100%; height:350px; overflow: hidden; position: relative; }
+#sec2 > .bg > img { float:left; width:100%;  }
+#sec2 > .bg > .text { width:700px; position: absolute; left:50%; top:130px; transform: translateX(-50%); }
+#sec2 > .bg > .text p { text-shadow: 2px 2px 3px #333; color:#fff; letter-spacing: -0.1px; }
+#sec2 > .bg >.text .viewBtn { position: absolute; left:50%; top:70px; transform: translateX(-50%); }
+#sec2 > .bg > .text .viewBtn label { padding:8px 20px; border:1px solid #fff; color:#fff; background-color:transparent; cursor: pointer;  transition: all .5s; }
+#sec2 > .bg > .text .viewBtn label:hover { background-color:#fff; color:#333; }
+#sec2 .content { position: absolute; left:50%; top:45%; width:100%; opacity: 0; z-index:-1; transform: translateX(-50%); padding:0 25px; }
+#sec2 .left { float:left; width:calc(50% - 10px); margin-right:10px; overflow: hidden; box-shadow: 0px 0px 5px #333; transform: rotateZ(90deg); transform-origin: 0 0; transition:  all 1s; }
+#sec2 .left .image { float:left; width:100%; height:200px; overflow: hidden; }
+#sec2 .left .image img { float:left; width:100%; transform: translateY(-25%); }
+#sec2 .left .text { float:left; width:100%; height:120px; background-color:#fff; padding:10px; }
+#sec2 .left .text h3 { float:left; width:100%; margin-bottom:5px; }
+#sec2 .right { float:left; width:calc(50% - 10px); margin-left:10px; }
+#sec2 .right .row { float:left; width:100%; overflow: hidden; }
+#sec2 .right .row li { float:left; width:100%; height:93px; box-shadow: 0px 0px 5px #333; margin-bottom:20px; transition: all 1s; transform: rotateZ(90deg); transform-origin: 0 0; }
+#sec2 .right .row li .image { float:left; width:50%; height:100%; overflow: hidden; }
+#sec2 .right .row li .image img { float:left; width:100%; transform: translateY(-30%); }
+#sec2 .right .row li .text { float:left; width:50%; height:100%; border:1px solid #bfbfbf; padding:10px; background-color:#fff; }
+#sec2 .right .row li .text h3 { float:left; width:100%; margin-bottom:10px; }
+#sec2 .right .row li .text p { float:left; width:100%; }
+
+#showView:checked ~ .bg { height:800px; }
+#showView:checked ~ .bg #showViewBtn { display:none; }
+#showView:checked ~ .bg #hideViewBtn { display:block; }
+#showView:checked ~ .bg .content { opacity: 1; z-index:10; }
+#showView:checked ~ .bg .left { transform: rotateZ(0deg); }
+#showView:checked ~ .bg .right .row li { transform: rotateZ(0deg); }
+#showView:checked ~ .bg .right .row li:nth-child(2) { transition-delay: 0.2s; }
+#showView:checked ~ .bg .right .row li:nth-child(3) { transition-delay: 0.4s; }
+
+#hideView:checked ~ .bg #showViewBtn { display:block; }
+#hideView:checked ~ .bg #hideViewBtn { display:none; }
+
+
+
+
+
+
+
+
+
+
+
+/* Section 3 */
+#sec3 { float:left ;width:calc(100% - 60px); margin:30px; position: relative; }
+#sec3 label { width:50%; height:340px; position: absolute; left:0; top:0; background-color:#ffa9a9; color:#fff; border:transparent; z-index:100; text-align: center; line-height: 340px; font-size:40px; font-weight: bold; cursor: pointer; transition: all .5s; }
+#sec3 label:hover { background-color:#fff; border:1px solid #ffa9a9; color:#ffa9a9; }
+#sec3 .row { float:left; width:100%; height:340px; }
+#sec3 .videoBox { float:left; width:50%; height:100%; }
+#sec3 .videoBox video { float:left; width:100%; height:100%; }
+#sec3 .text { float:left ;width:50%; height:100%; padding:20px; border:1px solid #bfbfbf; }
+#sec3 .text h3 { float:left; width:100%; font-size:18px; margin-bottom:10px; }
+#sec3 .text p { float:left; width:100%; font-size:13px; line-height: 160%; }
+
+#showVideo:checked ~ #showVideoBtn { z-index:100; left:50%; }
+#showVideo:checked ~ #hideVideoBtn { z-index:101; left:50%; }
+
+#hideVideo:checked ~ #showVideoBtn { z-index:101; }
+#hideVideo:checked ~ #hideVideoBtn { z-index:100; }
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+#footer { float:left; width:100%; background-color:#444444; }
+#footer .row { float:left; width:100%; color:#fff; padding:20px 30px; }
+#footer .row > div { float:left; width:calc(100% / 3); padding:0 10px; }
+.tourTitle { float:left; width:100%; border-bottom:1px solid #fff; margin-bottom:20px; }
+.tourTitle h3 { float:left; margin-bottom:4px; font-weight: normal; }
+
+.tourList ul { float:left; width:100%; }
+.tourList ul li { float:left; width:100%; list-style-type: square; list-style-position: inside; color:#cccccc; border-bottom:1px solid #888888; line-height: 35px; transition: all .5s; cursor: pointer; }
+.tourList ul li:hover { color:#fff; }
+
+.tourInfo ul { float:left; width:100%; }
+.tourInfo ul li { float:left; line-height: 30px; color:#fff; margin-bottom: 10px; }
+.tourInfo ul li:first-child { width:16%; }
+.tourInfo ul li:last-child { width:84%; }
+.tourInfo ul li input { float:left; width:160px; height:30px; border-radius: 5px; border:1px solid #bfbfbf; transition: all .5s; }
+.tourInfo ul li textarea { float:left; width:160px; height:30px; border-radius: 5px; border:1px solid #bfbfbf; transition: all .5s; }
+
+.tourInfo ul li input:focus { width:100%; }
+.tourInfo ul li textarea:focus { width:100%; height:150px; }
+
+.tourPhoto ul { float:left; width:100%; }
+.tourPhoto ul li { float:left; width:calc(100% / 3 - 40px); height:70px; overflow: hidden; margin:5px 20px; border:2px solid #fff; }
+.tourPhoto ul li img { float:left; width:100%; height:120%; transition: all .5s; cursor: pointer; }
+.tourPhoto ul li img:hover { transform: translateY(-10px); }
+
+.copyright { float:left; width:100%; height:50px; line-height: 50px; background-color:#fff; font-weight: bold; text-align: center; }
+
+.dn { display:none; }
+
+
+
+
+
+
+
+
+/* Media Query max-width 1500px */
+@media(max-width:1500px){
+	#wrap { min-width:inherit; }
+	.wrap { max-width: inherit; }
+}
+
+
+
+
+
+/* Media Query max-width 480px */
+@media(max-width:480px){
+
+
+
+
+	/* Layout */
+	#wrap { min-width:inherit; height:100%; perspective: none; perspective-origin: 50% 50%; overflow-x: hidden; overflow-y:auto; padding:0 20px; }
+	.wrap { max-width:inherit; margin:0 auto; }
+	#shadowBox { float:left; width:100%; height:100%; box-shadow: 0px 0px 20px #333; background-color:#fff; margin:20px 0; }
+	#header { float:left; width:100%; }
+	#contents { float:left; width:100%; overflow: hidden; }
+	#footer { float:left; width:100%; }
+
+
+
+
+
+
+
+	/* LOGO */
+	#logo { float:left; width:100%; text-align: center; margin-left:0; margin-top:30px; }
+	#logo a { float:left; width:100%; font-weight: normal; color:#fc7171; }
+
+
+
+
+
+
+
+
+
+
+
+	/* Navigation */
+	#menu { float:left; width:100%; margin-top:40px; }
+	.menu { float:left; width:100%; margin-right:0; }
+	.menu > li { float:left; width:100%; position: relative; }
+	.menu > li > .colorBox { position: absolute; left:0; top:100%; width:100px; height:150px; transform: rotateZ(90deg); transform-origin: 0 0; transition: all .5s; z-index:0; opacity: 0; background-color:rgba(255, 169, 169, 0.3); cursor: pointer; display:none; }
+	.menu > li > a { float:left; width:100%; height:60px; line-height: 60px; background-color:#fff; position: relative; z-index:5; padding:0 20px; text-align: center; }
+	.menu > li > ul { position: relative; left:0; bottom:0; z-index:4; width:100%; display:none; }
+	.menu > li > ul > li { float:left; position:static; top:auto; width:100%; line-height: 40px; border-bottom:2px solid #ff9a9a; }
+	.menu > li > ul > li > a { float:left; width:100%; height:100%; font-size:12px; text-align: center; color:#fff; background-color:rgba(255, 169, 169, 1); }
+
+	.menu > li > ul > li:nth-child(1) { z-index:3; transition: all 0.5s; }
+	.menu > li > ul > li:nth-child(2) { z-index:2; transition: all 1s; }
+	.menu > li > ul > li:nth-child(3) { z-index:1; transition: all 1.5s; }
+
+	.menu > li:hover > .colorBox { transform: rotateZ(270deg); opacity: 1; z-index:6; }
+	.menu > li:hover > ul > li:nth-child(1) { top:60px; z-index:13; }
+	.menu > li:hover > ul > li:nth-child(2) { top:102px; z-index:12; }
+	.menu > li:hover > ul > li:nth-child(3) { top:142px; z-index:11; }
+
+
+
+
+
+
+
+
+	/* Main Visual */
+	#animation { float:left; width:100%; height:400px; position: relative; perspective: 800px; margin-top:40px; }
+	#slideControl label { position: absolute; right:0; top:50%; line-height: 400px; transform: translateY(-50%); z-index:100; padding:0 10px; background-color:rgba(0, 0, 0, 0.2); cursor: pointer; color:#fff; transition: all.5s; }
+	#slideControl label:hover { background-color:rgba(0,0,0,0.7); }
+	#slide { float:left; width:100%; height:100%; position: relative; }
+	#slide li { position: absolute; left:0; top:0; width:100%; height:100%; background-repeat: no-repeat; }
+	#slide .left { background-image:url("../images/background.jpg"); z-index:99; }
+	#slide .right { left:50%; transform-style: preserve-3d; transition:transform 1s, z-index 0s; transition-delay: 0s, 1s; transform-origin: 0 0; }
+	#slide figure { position: absolute; left:0; top:0; width:100%; height:100%; backface-visibility: hidden; }
+	#slide figure.front { background-position: -220px 0; }
+
+	#image1 { z-index:4; }
+	#image2 { z-index:3; }
+	#image3 { z-index:2; }
+	#image4 { z-index:1; }
+
+	#image1 .front { background-image: url("../images/background.jpg"); }
+	#image1 .back { background-image: url("../images/background2.jpg"); transform: rotateY(-180deg); }
+
+	#image2 .front { background-image: url("../images/background2.jpg"); }
+	#image2 .back { background-image: url("../images/background3.jpg"); transform: rotateY(-180deg); }
+
+	#image3 .front { background-image: url("../images/background3.jpg"); }
+	#image3 .back { background-image: url("../images/background.jpg"); transform: rotateY(-180deg); }
+
+	#image4 .front { background-image: url("../images/background.jpg"); }
+
+	#slide1:checked ~ #slideControl #goSlide2 { display:block; }
+	#slide1:checked ~ #slideControl #goSlide3 { display:none; }
+	#slide1:checked ~ #slideControl #goSlide4 { display:none; }
+	#slide1:checked ~ #slide #image1 { z-index:4; }
+	#slide1:checked ~ #slide #image2 { z-index:3; }
+	#slide1:checked ~ #slide #image3 { z-index:2; }
+	#slide1:checked ~ #slide #image4 { z-index:1; }
+
+
+	#slide2:checked ~ #slideControl #goSlide2 { display:none; }
+	#slide2:checked ~ #slideControl #goSlide3 { display:block; }
+	#slide2:checked ~ #slideControl #goSlide4 { display:none; }
+	#slide2:checked ~ #slide #image1 { transform: rotateY(-180deg); }
+	#slide2:checked ~ #slide #image1 { z-index:1; }
+	#slide2:checked ~ #slide #image2 { z-index:4; }
+	#slide2:checked ~ #slide #image3 { z-index:3; }
+	#slide2:checked ~ #slide #image4 { z-index:2; }
+
+	#slide3:checked ~ #slideControl #goSlide2 { display:none; }
+	#slide3:checked ~ #slideControl #goSlide3 { display:none; }
+	#slide3:checked ~ #slideControl #goSlide4 { display:block; }
+	#slide3:checked ~ #slide #image1 { transform: rotateY(-180deg); }
+	#slide3:checked ~ #slide #image2 { transform: rotateY(-180deg); }
+	#slide3:checked ~ #slide #image1 { z-index:1; }
+	#slide3:checked ~ #slide #image2 { z-index:3; }
+	#slide3:checked ~ #slide #image3 { z-index:3; }
+	#slide3:checked ~ #slide #image4 { z-index:2; }
+
+	#slide4:checked ~ #slideControl #goSlide2 { display:none; }
+	#slide4:checked ~ #slideControl #goSlide3 { display:none; }
+	#slide4:checked ~ #slideControl #goSlide4 { display:block; }
+	#slide4:checked ~ #slide #image1 { transform: rotateY(-180deg); }
+	#slide4:checked ~ #slide #image2 { transform: rotateY(-180deg); }
+	#slide4:checked ~ #slide #image3 { transform: rotateY(-180deg); }
+	#slide4:checked ~ #slide #image1 { z-index:2; }
+	#slide4:checked ~ #slide #image2 { z-index:1; }
+	#slide4:checked ~ #slide #image3 { z-index:4; }
+	#slide4:checked ~ #slide #image4 { z-index:3; }
+
+
+
+
+
+
+
+
+
+
+	/* Section 1 */
+	#sec1 { float:left; width:100%; }
+	#sec1 h2 { float:left; width:100%; text-align: center; font-size:35px; line-height: 140px; transition: height .5s; }
+	#sec1 .row { float:left; width:100%; height:auto; padding:0 20px; }
+	#sec1 .row li { float:left; width:100%; height:300px; margin:0; position: relative; }
+	#sec1 .row li .image { float:left; width:100%; height:100%; overflow: hidden; }
+	#sec1 .row li .image img { float:left; width:100%; transform: translateZ(-2px) scale(2); }
+	#sec1 .row li .text { position: absolute; left:0; top:0; width:100%; height:100%; background-color:rgba(0, 0, 0, 0.3); text-align: center; color:#fff; }
+	#sec1 .row li .text h3 { margin-top:130px; }
+	#sec1 .row li .text p { margin-top:15px; }
+
+
+
+
+
+
+
+
+
+	/* Section 2 */
+	#sec2 { float:left; width:100%; margin-top:40px; }
+	#sec2 > .bg { float:left; width:100%; height:350px; overflow: hidden; position: relative; }
+	#sec2 > .bg > img { float:left; width:100%;  }
+	#sec2 > .bg > .text { width:350px; position: absolute; left:50%; top:70px; transform: translateX(-50%); line-height: 20px; }
+	#sec2 > .bg > .text p { text-shadow: 2px 2px 3px #333; color:#fff; letter-spacing: -0.1px; }
+	#sec2 > .bg > .text .viewBtn { position: absolute; left:50%; top:120px; transform: translateX(-50%); }
+	#sec2 > .bg > .text .viewBtn label { padding:8px 20px; border:1px solid #fff; color:#fff; background-color:transparent; cursor: pointer;  transition: all .5s; }
+	#sec2 > .bg > .text .viewBtn label:hover { background-color:#fff; color:#333; }
+	#sec2 .content { position: absolute; left:50%; top:45%; width:100%; opacity: 0; z-index:-1; transform: translateX(-50%); padding:0 25px; }
+	#sec2 .left { float:left; width:calc(50% - 10px); margin-right:10px; overflow: hidden; box-shadow: 0px 0px 5px #333; transform: rotateZ(90deg); transform-origin: 0 0; transition:  all 1s; }
+	#sec2 .left .image { float:left; width:100%; height:200px; overflow: hidden; }
+	#sec2 .left .image img { float:left; width:100%; transform: translateY(-25%); }
+	#sec2 .left .text { float:left; width:100%; height:120px; background-color:#fff; padding:10px; }
+	#sec2 .left .text h3 { float:left; width:100%; margin-bottom:5px; }
+	#sec2 .right { float:left; width:calc(50% - 10px); margin-left:10px; }
+	#sec2 .right .row { float:left; width:100%; overflow: hidden; }
+	#sec2 .right .row li { float:left; width:100%; height:93px; box-shadow: 0px 0px 5px #333; margin-bottom:20px; transition: all 1s; transform: rotateZ(90deg); transform-origin: 0 0; }
+	#sec2 .right .row li .image { float:left; width:50%; height:100%; overflow: hidden; }
+	#sec2 .right .row li .image img { float:left; width:100%; transform: translateY(-30%); }
+	#sec2 .right .row li .text { float:left; width:50%; height:100%; border:1px solid #bfbfbf; padding:10px; background-color:#fff; }
+	#sec2 .right .row li .text h3 { float:left; width:100%; margin-bottom:10px; }
+	#sec2 .right .row li .text p { float:left; width:100%; }
+
+	#showView:checked ~ .bg { height:800px; }
+	#showView:checked ~ .bg #showViewBtn { display:none; }
+	#showView:checked ~ .bg #hideViewBtn { display:block; }
+	#showView:checked ~ .bg .content { opacity: 1; z-index:10; }
+	#showView:checked ~ .bg .left { transform: rotateZ(0deg); }
+	#showView:checked ~ .bg .right .row li { transform: rotateZ(0deg); }
+	#showView:checked ~ .bg .right .row li:nth-child(2) { transition-delay: 0.2s; }
+	#showView:checked ~ .bg .right .row li:nth-child(3) { transition-delay: 0.4s; }
+
+	#hideView:checked ~ .bg #showViewBtn { display:block; }
+	#hideView:checked ~ .bg #hideViewBtn { display:none; }
+
+
+
+
+
+
+
+
+
+
+
+	/* Section 3 */
+	#sec3 { float:left ;width:calc(100% - 60px); margin:30px; position: relative; }
+	#sec3 label { width:100%; height:340px; position: absolute; left:0; top:0; background-color:#ffa9a9; color:#fff; border:transparent; z-index:100; text-align: center; line-height: 340px; font-size:40px; font-weight: bold; cursor: pointer; transition: all .5s; }
+	#sec3 label:hover { background-color:#fff; border:1px solid #ffa9a9; color:#ffa9a9; }
+	#sec3 .row { float:left; width:100%; height:auto; }
+	#sec3 .videoBox { float:left; width:100%; height:100%; }
+	#sec3 .videoBox video { float:left; width:100%; height:100%; }
+	#sec3 .text { float:left ;width:100%; height:100%; padding:20px; border:1px solid #bfbfbf; margin-top:140px; }
+	#sec3 .text h3 { float:left; width:100%; font-size:18px; margin-bottom:10px; }
+	#sec3 .text p { float:left; width:100%; font-size:13px; line-height: 160%; }
+
+	#showVideo:checked ~ #showVideoBtn { z-index:100; left:50%; }
+	#showVideo:checked ~ #hideVideoBtn { z-index:101; left:50%; }
+
+	#hideVideo:checked ~ #showVideoBtn { z-index:101; }
+	#hideVideo:checked ~ #hideVideoBtn { z-index:100; }
+
+
+
+
+
+
+
+
+
+
+
+
+	/* Footer */
+	#footer { float:left; width:100%; background-color:#444444; }
+	#footer .row { float:left; width:100%; color:#fff; padding:20px 30px; }
+	#footer .row > div { float:left; width:100%; padding:0; margin-bottom:50px; }
+	.tourTitle { float:left; width:100%; border-bottom:1px solid #fff; margin-bottom:20px; }
+	.tourTitle h3 { float:left; margin-bottom:4px; font-weight: normal; }
+
+	.tourList ul { float:left; width:100%; }
+	.tourList ul li { float:left; width:100%; list-style-type: square; list-style-position: inside; color:#cccccc; border-bottom:1px solid #888888; line-height: 35px; transition: all .5s; cursor: pointer; }
+	.tourList ul li:hover { color:#fff; }
+
+	.tourInfo ul { float:left; width:100%; }
+	.tourInfo ul li { float:left; line-height: 30px; color:#fff; margin-bottom: 10px; }
+	.tourInfo ul li:first-child { width:16%; }
+	.tourInfo ul li:last-child { width:84%; }
+	.tourInfo ul li input { float:left; width:160px; height:30px; border-radius: 5px; border:1px solid #bfbfbf; transition: all .5s; }
+	.tourInfo ul li textarea { float:left; width:160px; height:30px; border-radius: 5px; border:1px solid #bfbfbf; transition: all .5s; }
+
+	.tourInfo ul li input:focus { width:100%; }
+	.tourInfo ul li textarea:focus { width:100%; height:150px; }
+
+	.tourPhoto ul { float:left; width:100%; }
+	.tourPhoto ul li { float:left; width:100%; height:200px; overflow: hidden; margin:20px 0; border:2px solid #fff; }
+	.tourPhoto ul li img { float:left; width:100%; height:120%; transition: all .5s; cursor: pointer; }
+	.tourPhoto ul li img:hover { transform: translateY(-10px); }
+
+	.copyright { float:left; width:100%; height:50px; line-height: 50px; background-color:#fff; font-weight: bold; text-align: center; }
+
+	.dn { display:none; }
+}
