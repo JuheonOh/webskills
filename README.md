@@ -4,6 +4,8 @@
 
 본 사이트는 온라인으로 차량을 렌트할 수 있는 “DreamRentacar”라는 차량렌트 전문 사이트 이다. 웹사이트는 웹 표준을 준수하여 다양한 사용자들이 편리하게 접근이 가능하도록 사이트의 성격을 잘 파악하여 기획하고 제작하여야 한다.
 
+- [과제 요구사항 참고](https://github.com/JuheonOh/webskills/blob/2014_%EC%A0%84%EA%B5%AD/task/2014%20%EC%A0%84%EA%B5%AD%EA%B8%B0%EB%8A%A5%EA%B2%BD%EA%B8%B0%EB%8C%80%ED%9A%8C%20%EA%B3%BC%EC%A0%9C%20%EB%B0%8F%20%EC%B1%84%EC%A0%90%EA%B8%B0%EC%A4%80%ED%91%9C.pdf)
+
 ## 스크린샷
 
 ### 메인 페이지
