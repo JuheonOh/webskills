@@ -72,7 +72,7 @@
 						$echo = "";
 						foreach($menu as $key=>$val){
 							if($key > 0) $echo .= "<br>";
-							$md = explode("l", $menu[$key]);
+							$md = explode("|", $menu[$key]);
 							$echo .= $md[0]." / ".$md[1]."개";
 							
 						}
