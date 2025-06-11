@@ -1,69 +1,65 @@
 <?php
-	// Database Connection
-	$pdo = new PDO("mysql:host=mysql; charset=utf8; dbname=20150409;", "root", "");
+
+	// 데이터베이스 접근
+	$pdo = new PDO("mysql:host=mysql; charset=utf8; dbname=20160126;", "root", "");
 	
-	// Language
+	// MIME 타입 설정
 	header("content-type:text/html; charset=utf-8;");
 	
-	// Date
-	date_default_timezone_set("Asia/Seoul");
-	
-	// Session Start
+	// 세션 사용 시작
 	session_start();
 	
+	// 서버 시간 설정
+	date_default_timezone_set("Asia/Seoul");
 	
-	// Address Save
+	
+	// 주소 저장
 	if(!isset($_GET['page'])){
 		$current = "main";
 		$var_array = explode("/", $_SERVER['REQUEST_URI']);
-		$menu_arr = array("midx", "sidx", "action", "idx", "parent", "child");
-		foreach($menu_arr as $key=>$val){
-			$$val = isset($var_array["$key"]) ? $var_array["$key"] : NULL;
-		}
 	} else {
 		$current = "sub";
 		$var_array = explode("/", $_GET['page']);
-		$menu_arr = array("midx", "sidx", "action", "idx", "parent");
-		foreach($menu_arr as $key=>$val){
-			$$val = isset($var_array["$key"]) ? $var_array["$key"] : NULL;
-		}
 	}
 	
-	// get page
-	$get_page = "/{$midx}/{$sidx}/x";
+	$menu_arr = array("midx", "sidx", "action", "idx", "parent");
+	foreach($menu_arr as $key=>$val){
+		$$val = isset($var_array[$key]) ? $var_array[$key] : NULL;
+	}
 	
-	// Message Box
+	// 메시지 박스
 	function alert($msg){
-		echo "<script>alert('{$msg}');</script>";
+		echo "<script>alert('{$msg}')</script>";
 	}
 	
-	// Page Move
+	// 페이지 이동
 	function move($url){
 		echo "<script>";
-			echo $url ? "document.location.replace('{$url}');" : "history.back();";
+			echo $url ? "document.location.replace('{$url}')" : "history.back();";
 		echo "</script>";
 		exit();
 	}
 	
-	// Page Access
-	function access($bool, $msg="로그인 후 이용가능합니다.", $url=false){
+	// 페이지 접근 권한
+	function access($bool, $msg="로그인 후 이용할 수 있습니다.", $url=false){
 		if(!$bool){
 			alert($msg);
 			move($url);
 		}
 	}
 	
-	// Column
+	// 데이터 가공
 	function column($arr, $cancel){
 		$cancel = explode("/", $cancel);
 		$column = "";
 		foreach($arr as $key=>$val){
 			if(!in_array($key, $cancel)) $column .= ", {$key}='{$val}'";
 		}
+		
 		return substr($column, 2);
 	}
 	
-	// Query
+	// 쿼리 축소
 	function q($type, $table, $column){
 		global $pdo;
 		
@@ -77,22 +73,17 @@
 			case 'delete' :
 				$pdo->query("delete from {$table} {$column}");
 			break;
-			case 'select' :
-				return $pdo->query("select * from {$table}");
-			break;
-			default:
-				return;
-			break;
 		}
 	}
 	
-	// var save
-	$url = isset($url) ? $url : false;
-	$cancel = isset($cancel) ? $cancel : "";
-	$add_sql = isset($add_sql) ? $add_sql : "";
+	// highright
+	function hit($str, $key){
+		return str_replace($key, "<span class=\"search-text\">{$key}</span>", $str);
+	}
 	
-	// SESSION SAVE
+	$cancel = $add_sql = "";
+	
 	$_SESSION['userid'] = isset($_SESSION['userid']) ? $_SESSION['userid'] : NULL;
 	$_SESSION['username'] = isset($_SESSION['username']) ? $_SESSION['username'] : NULL;
-	$_SESSION['email'] = isset($_SESSION['email']) ? $_SESSION['email'] : NULL;
+	$_SESSION['cellular'] = isset($_SESSION['cellular']) ? $_SESSION['cellular'] : NULL;
 	$_SESSION['lv'] = isset($_SESSION['lv']) ? $_SESSION['lv'] : NULL;

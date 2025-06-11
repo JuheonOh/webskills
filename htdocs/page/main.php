@@ -1,50 +1,58 @@
-<?php include_once("{$_SERVER['DOCUMENT_ROOT']}/include/member_ok.php"); ?>
-<div class="main">
-	<div class="login_box">
-    	<h3>Members Login</h3>
-        <?php if(!isset($_SESSION['userid'])){ ?>
-    	<form id="login_frm" action="/" method="post" onSubmit="return frmChk(this, 'userid', 'pw');">
-        	<div>
-            	<input type="hidden" name="action" value="login">
-            </div>
-            <ul class="login_box_area">
-            	<li><input type="text" name="userid" id="userid" title="아이디" value=""  placeholder="User ID"></li>
-                <li><input type="password" name="pw" id="pw" title="비밀번호" value=""  placeholder="Password"></li>
+<div id="main">
+	<?php if(!isset($_SESSION['userid'])){ ?>
+	<div class="content-box-1-1">
+    	<h3 class="main-title"><span class="circle"></span>회원 로그인</h3>
+    	<form id="login-frm" onSubmit="return frmSubmit(this, '/include/login-ok.php', '로그인이 완료되었습니다.');">
+        	<ul class="login-box">
+            	<li><label for="userid"><input type="text" id="userid" name="userid" title="아이디" value="" placeholder="아이디" required></label></li>
+                <li><label for="pw"><input type="password" id="pw" name="pw" title="비밀번호" value="" placeholder="비밀번호" required></label></li>
             </ul>
-            <ul class="login_box_util">
-            	<li><input type="submit" title="로그인" value="LOGIN"></li>
-                <li><input type="button" title="회원가입" value="◀ JOIN" onClick="link('/join/x/');"></li>
-            </ul>
+            <div class="login-confirm"><input type="submit" title="로그인" value="로그인"></div>
+            <div class="join-confirm"><input type="button" title="회원가입" value="저는 회원이 아니에요.." onClick="dialog('회원가입', '/include/join.php');"></div>
         </form>
-        <?php } else { ?>
-        	<ul class="logout_box_area" style="position:relative;">
-            	<li><?php echo $_SESSION['userid']; ?>님 환영합니다.</li>
-                <li style="position:absolute; right:0; top:90px; line-height:0px;"><a href="/edit/x/" title="회원정보수정">회원정보수정</a></li>
-                <li><a href="/include/logout.php" title="로그아웃">로그아웃</a></li>
-            </ul>
-        <?php } ?>
     </div>
-    <div class="main5_box">
-    	<h3>■ 커뮤니티</h3>
-        <p><a href="/main5/x/" title="커뮤나티">+more</a></p>
-    	<ul class="main5_box_area">
-        	<?php for($i=1; $i<=6; $i++){ ?>
-        	<li><a href="/main5/x/" title="커뮤니티">커뮤니티 게시글입니다.</a><span>[2015-04-09]</span></li>
-            <?php } ?>
+    <?php } else { ?>
+    <div class="content-box-1-2">
+    	<h3 class="main-title"><span class="circle"></span>내 정보</h3>
+    	<div class="logout-box">
+        	<div class="welcome">환영합니다. <?php echo $_SESSION['userid']; ?> 님</div>
+            <div class="modify-button"><input type="button" title="회원정보 수정" value="회원정보 수정" onClick="dialog('회원정보&nbsp;수정', '/include/edit.php');"></a></div>
+        	<div class="logout-confirm"><input type="button" title="로그아웃" value="로그아웃" onClick="link('/include/logout.php');"></div>
+        </div>
+    </div>
+    <?php } ?>
+    <div class="content-box-2">
+    	<h3 class="main-title"><span class="circle"></span>축제안내</h3>
+    	<div class="content-box-2-area">
+            <div><a href="/main1" title="축제안내"><img src="/image/content-box-2.jpg" title="드림파크 소개 이미지" alt="드림파크 소개 이미지"></a></div>
+            <span><a href="/main1" title="축제안내">국화축제행사장과 이어지는 경인아라뱃길에서 즐거움이 있는 유람선관광, 낭만이 넘치는 요트관광, 신나는 자전거 관광으로 사랑하는 가족, 연인, 친구와의..</a></span>
+        </div>
+        <div class="content-box-2-button"><input type="button" title="더 알아보기" value="더 알아보기" onClick="link('/main1')"></div>
+    </div>
+    <div class="content-box-3">
+    	<h3 class="main-title"><span class="circle"></span>지나간 축제</h3>
+        <ul>
+        	<li><a href="/main3" title="체험신청">
+            	<figure class="flip">
+                	<div class="front"><img src="/image/c3_1.png" title="지나간 체험 사진 1" alt="지나간 체험 사진 1"></div>
+                    <figcaption class="back"><p>2015) 국화축제</p></figcaption>
+                </figure>
+                </a>
+            </li>
+            <li><a href="/main3" title="체험신청">
+                <figure class="flip">
+                	<div class="front"><img src="/image/c3_2.png" title="지나간 체험 사진 2" alt="지나간 체험 사진 2"></div>
+                    <figcaption class="back"><p>2015) 공룡축제</p></figcaption>
+                </figure>
+                </a>
+            </li>
+            <li><a href="/main3" title="체험신청">
+	            <figure class="flip">
+                	<div class="front"><img src="/image/c3_3.png" title="지나간 체험 사진 3" alt="지나간 체험 사진 3"></div>
+                    <figcaption class="back"><p>2015) 동화축제</p></figcaption>
+                </figure>
+                </a>
+            </li>
         </ul>
-    </div>
-    <div class="main3_box">
-    	<h3>■ 체험신청</h3>
-        <p class="link"><a href="/main3/x/" title="체험신청">바로가기</a></p>
-        <p class="date">◀ 2015년 4월 ▶</p>
-        <ul class="main3_box_area">
-        	<li><a href="/main3/x/" title="체험신청"><img src="/image/main3_img1.png" title="main3_img1" alt="main3_img1"><span>국화 그리기</span></a></li>
-            <li><a href="/main3/x/" title="체험신청"><img src="/image/main3_img2.png" title="main3_img2" alt="main3_img2"><span>국화 따기</span></a></li>
-            <li><a href="/main3/x/" title="체험신청"><img src="/image/main3_img3.png" title="main3_img3" alt="main3_img3"><span>국화 디자인</span></a></li>
-        </ul>
-    </div>
-    <div class="main1_box">
-    	<h3>■ 축제안내</h3>
-        <div><a href="/main1/x/" title="축제안내"><img src="/image/img_eventhall_1.jpg" alt="img_eventhall_1" title="img_eventhall_1" width="200" height="130"></a></div>
     </div>
 </div>

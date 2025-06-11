@@ -1,2 +1,4 @@
-body { display:none; }
-#text_content, .sub_top h3  { display:block; }
+@charset "utf-8";
+/* CSS Document */
+
+#header, #animation, #sub-top ul, #footer { display:none; }

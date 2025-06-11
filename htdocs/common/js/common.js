@@ -1,108 +1,107 @@
 // 글자 크기 조절
 var size = 100;
 function zoom(n){
-	var txtArea = document.getElementById("text_content");
-	size = n == 100 ? 100 : size + n;
-	txtArea.style.fontSize = size + "%";
+	var textArea = $("#text-content");
+	size = (n == 100) ? 100 : size + n;
+	/*
+	if(n == 100){
+		size = 100;
+	} else {
+		size += n;
+	}
+	*/
+	textArea.css({ "fontSize" : size + "%" });
 }
 
-// link
+// 링크 이동
 function link(url){
 	document.location.href = url;
 }
 
-// 폼 체크
-function frmChk(frm){
-	function regChk(obj){
-		var msg = false;
-		var reg;
-		
-		switch(obj.name){
-			default : 
-				if(obj.value.length == 0) msg = obj.title + "을(를) 입력해주세요.";
-			break;
-		}
-		return msg;
-	}
-	
-	var is0k = new Array();
-	var arg;
-	var argLen = arguments.length -1;
-	
-	if(frm.id == "ep_list_frm"){
-		$.post(
-			"/include/delete.php",
-			$(frm).serialize(),
-			function(data){
-				if(data){
-					alert(data);
-				} else {
-					alert("체험신청이 취소되었습니다.");
-					link("/main4/x/");
+// 다이얼로그
+function dialog(title, where){
+	$.ajax({
+		type : "POST",
+		url : where,
+		success : function(data){
+			$("<div title="+title+"></div>").html(data).dialog({
+				modal : true,
+				resizable : false,
+				width : "auto",
+				height : "auto",
+				close : function(){
+					$(this).remove();
 				}
-			}
-		);
-		return false;
-	}
-	
-	for(var i = argLen; i >= 1; i--){
-		arg = arguments[i];
-		is0k[arg] = regChk(frm[arg]);
-		
-		if(is0k[arg]){
-			frm[arg].style.backgroundColor = "#FCC";
-			frm[arg].style.border = "1px solid #F00";
-			frm[arg].style.color = "#333";
-			frm[arg].focus();
-		} else {
-			frm[arg].style.backgroundColor = "#FFF";
-			frm[arg].style.border = "1px solid #999";
+			});
+		},
+		error : function(){
+			alert("파일의 경로를 찾을 수 없습니다.");
 		}
-	}
-	
-	for(var i = 1; i <= argLen; i++){
-		arg = arguments[i];
-		if(is0k[arg]){
-			alert(is0k[arg]);
-			return false;
-		}
-	}
-	
-	if(frm.id == "edit_frm"){
-		$.post(
-			"/include/editcheck.php",
-			$(frm).serialize(),
-			function(data){
-				if(data){
-					alert(data);
-				} else {
-					alert("회원정보 수정이 완료되었습니다.");			
-					link("/");
-				}
-			}
-		);
-		return false;
-	} else if(frm.id == "join_frm"){
-		$.post(
-			"/include/idcheck.php",
-			$(frm).serialize(),
-			function(data){
-				if(data){
-					alert(data);
-				} else {
-					alert("회원가입이 완료되었습니다.");
-					link('/');
-				}
-			}
-		);
-		return false;
-	}
-	return true;
+	});
 }
 
-// 폼 전송
-function frmSubmit(frm, idx){
-	var frm = document.forms[frm];
-	frm.idx.value = idx;
-	frm.submit();
+// 애니메이션
+var cut = 0;
+var btn = {
+	on : function(){
+		this.timer = setInterval(function(){
+			animation('next');
+		}, 5500);
+	},
+	off : function(){
+		clearInterval(this.timer);
+	}
 }
+
+// 애니메이션 종료
+function animation(type){
+	$("#slide").stop();
+	btn.off();
+	
+	switch(type){
+		case 'next' :
+			cut = cut == 2 ? 0 : cut+1;
+		break;
+		case 'prev' :
+			cut = cut == 0 ? 2 : cut-1;
+		break;
+		default :
+			cut = type;
+		break;
+	}
+	
+	var left = (-100 * cut) + "%";
+	
+	$("#slide").animate({ "margin-left" : left }, 500, function(){
+		$("#slide-btn > li").css({ "background-color" : "#aaa" });
+		$("#slide-btn > li").eq(cut).css({ "background-color" : "#ff5900" });
+		btn.on();
+	});
+}
+
+function frmSubmit(frm, where, msg, move){
+	
+	$.ajax({
+		type : "POST",
+		url : where,
+		data : $(frm).serialize(),
+		success : function(data){
+			if(data){
+				alert(data);
+			} else {
+				alert(msg);
+				if(move == null){
+					link("/");
+				} else {
+					link(move);
+				}
+			}
+		}
+	});
+	
+	return false;
+}
+
+$(function(){
+	animation('next');
+});

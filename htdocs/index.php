@@ -1,83 +1,81 @@
 <?php
 	include_once("{$_SERVER['DOCUMENT_ROOT']}/include/lib.php");
-	
 	$main = $pdo->query("select * from menu where child='{$midx}'")->fetch();
-	$main_title = isset($main['title']) ? $main['title'] : '';
-	$main_type = isset($main['type']) ? $main['type'] : '';
-
 ?>
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>드림파크 국화축제</title>
+<link rel="stylesheet" href="/common/js/jquery/jquery-ui-1.11.4/jquery-ui.css">
 <link rel="stylesheet" href="/common/css/common.css">
 <link rel="stylesheet" href="/common/css/print.css" media="print">
-<link rel="stylesheet" href="/common/js/jquery-ui-1.10.4/jquery-ui-1.10.4/css/redmond/jquery-ui.css">
-<script src="/common/js/jquery-1.11.1/jquery-1.11.1.js"></script>
-<script src="/common/js/jquery-ui-1.10.4/jquery-ui-1.10.4/js/jquery-1.10.2.js"></script>
-<script src="/common/js/jquery-ui-1.10.4/jquery-ui-1.10.4/js/jquery-ui-1.10.4.js"></script>
-<script src="/common/js/jquery-ui-1.10.4/jquery-ui-1.10.4/js/jquery.ui.datepicker-ko.js"></script>
+<script src="/common/js/jquery/jquery-1.11.2.js"></script>
+<script src="/common/js/jquery/jquery-ui-1.11.4/jquery-ui.js"></script>
+<script src="/common/js/jquery/jquery-ui-1.11.4/jquery.ui.datepicker-ko.js"></script>
 <script src="/common/js/common.js"></script>
+<title>드림파크 국화축제</title>
 </head>
 
 <body>
 <div id="wrap">
-	<!-- header -->
 	<header id="header">
     	<div class="wrap">
-        	<h1 id="logo"><a href="/" title="LOGO"><img src="/image/logo.png" title="logo" alt="logo"></a></h1>
-            <ul class="util">
-            	<li><a href="/" title="Home">Home</a></li>
+        	<h1 id="logo"><a href="/" title="HOME"><img src="/image/logo.png" title="LOGO" alt="LOGO"></a></h1>
+            <ul id="util">
+	            <li><a href="/" title="HOME">HOME</a></li>
+            	<?php if(!isset($_SESSION['userid'])){ ?>
+                <li><a href="javascript:dialog('로그인', '/include/login.php');" title="로그인">로그인</a></li>
+                <li><a href="javascript:dialog('회원가입', '/include/join.php');" title="회원가입">회원가입</a></li>
+                <?php } else { ?>
+                <li><a href="/include/logout.php" title="로그아웃">로그아웃</a></li>
+                <?php } ?>
             </ul>
-            <!-- Menu -->
-            <nav class="menu">
-            	<ul>
-                	<?php
-					$menu_r = $pdo->query("select * from menu where parent='0'");
-					while($menu_list = $menu_r->fetch()){
-					?>
-                	<li<?php if($menu_list['child'] == "midx") echo " class='cur'"; ?>><a href="/<?php echo $menu_list['child']."/x/"; ?>" title="<?php echo $menu_list['title']; ?>"><?php echo $menu_list['title']; ?></a></li>
-                    <?php } ?>
-                </ul>
-            </nav>
-            <!-- //Menu -->
         </div>
+        <nav id="menu">
+            <ul class="menu">
+                <?php
+                    $menu_r = $pdo->query("select * from menu where parent='0'");
+                    while($menu_list = $menu_r->fetch()){
+                ?>
+                <li<?php if($midx == $menu_list['child']) echo ' class="active"'; ?>><a href="/<?php echo $menu_list['child']; ?>" title="<?php echo $menu_list['title']; ?>"><?php echo $menu_list['title']; ?></a></li>
+                <?php } ?>
+            </ul>
+        </nav>
     </header>
-    <!-- //header -->
-    <!-- Contents -->
     <div id="contents">
-    	<?php if(!$sidx == "x"){ ?>
     	<div id="animation">
-            <div id="slide_parent">
-                <ul id="slide">
-                    <li><img src="/image/slide_img1.png" title="slide1" alt="slide1"></li>
+        	<div id="slide-parent">
+            	<ul id="slide">
+                	<li><img src="/image/slide1.jpg" alt="첫번째 슬라이드 애니메이션 이미지" title="첫번째 슬라이드 애니메이션 이미지"></li>
+                    <li><img src="/image/slide2.jpg" alt="두번째 슬라이드 애니메이션 이미지" title="두번째 슬라이드 애니메이션 이미지"></li>
+                    <li><img src="/image/slide3.jpg" alt="세번째 슬라이드 애니메이션 이미지" title="세번째 슬라이드 애니메이션 이미지"></li>
                 </ul>
+                <div id="slide-control-wrap">
+                <ul id="slide-control">
+                    <li onClick="animation('prev')"></li>
+                    <li>
+                        <ul id="slide-btn">
+                            <li onClick="animation(0)"></li>
+                            <li onClick="animation(1)"></li>
+                            <li onClick="animation(2)"></li>
+                        </ul>
+                    </li>
+                    <li onClick="animation('next')"></li>
+                </ul>
+                </div>
             </div>
         </div>
-        <?php } else { ?>
-        <div id="sub_animation">
-            <div id="sub_slide_parent">
-                <ul id="sub_slide">
-                    <li><img src="/image/slide_img1.png" title="slide1" alt="slide1"></li>
-                </ul>
-            </div>
-        </div>
-        <?php } ?>
         <div class="content">
         	<div class="wrap">
             	<?php include_once("{$_SERVER['DOCUMENT_ROOT']}/page/{$current}.php"); ?>
             </div>
         </div>
     </div>
-    <!-- //Contents -->
-    <!-- Footer -->
     <footer id="footer">
     	<div class="wrap">
-        	<p>Copyright (c) 드림파크 국화축제 All Right Reserved</p>
+        	<p>Copyright &copy; 드림파크 국화축제 All Right Reserved </p>
         </div>
     </footer>
-    <!-- //Footer -->
 </div>
 </body>
 </html>

@@ -1,49 +1,31 @@
-<?php
-include_once("{$_SERVER['DOCUMENT_ROOT']}/include/lib.php");
-access(isset($_SESSION['userid']));
-$ep = $pdo->query("
-	select * from ep 
-	
-");
-?>
-<div class="main3">
-	<form id="ep_frm" action="/main3/x/" method="post" onSubmit="return frmChk(this, 'edate', 'number');">
-    	<div>
-        	<input type="hidden" name="ep_list" value="insert">
-        </div>
-        <ul class="ep_area">
-        	<li><select>
-            	<option value="">선택하세요</option>
-            	<?php $ep_r = $pdo->query("select * from ep");
-				while($ep_list = $ep_r->fetch()){?>
-                <option value="<?php echo $ep_list['idx']; ?>"><?php echo $ep_list['title']; ?></option>
-				<?php } ?>
-            </li></select>
-        	<li>체험명 : </li>
-        	<li><input type="text" name="edate" id="edate" title="예약인원" placeholder="날짜를 선택하려면 이곳을 클릭해주세요." readonly></li>
-            <li>예약인원 : &nbsp;<input type="text" name="number" id="number" value="0" min="0" title="인원수"></li>
-        </ul>
-    </form>
+<div id="main3">
+	<table class="table">
+    	<colgroup>
+        	<col width="40%">
+            <col width="20%">
+            <col width="25%">
+            <col width="15%">
+        </colgroup>
+    	<thead>
+        	<tr>
+            	<th>체험 이미지</th>
+                <th>체험 이름</th>
+                <th>하루 동안 신청 가능 인원</th>
+                <th>기능</th>
+            </tr>
+        </thead>
+        <tbody>
+        	<?php
+				$reserve = $pdo->query("select * from reserve");
+				while($list = $reserve->fetch()){
+			?>
+            <tr>
+            	<td><img src="/image/<?php echo $list['image']; ?>" alt="<?php echo $list['image']; ?>" title="<?php echo $list['image']; ?>"></td>
+                <td><?php echo $list['title']; ?></td>
+                <td><?php echo $list['number']; ?> 명</td>
+                <td><button title="선택" onClick="link('/main3/<?php echo $list['idx']; ?>')">선택</button></td>
+            </tr>
+            <?php } ?>
+        </tbody>
+    </table>
 </div>
-<script>
-$(function(){
-	$("input[name=edate]").datepicker(function(){
-		minDate : date("Y-m-d");
-	});
-	
-	
-	$("input[name=number]").spinner(function(){
-		var maxnumber = 5;
-		if($(this).val() > maxnumber){
-			
-			alert("최대 인원수보다 많이 신청할 수 없습니다.");
-			$(this).val(5);
-		}
-	});
-	
-	$("li > select").select(function(){
-		
-	});	
-
-});
-</script>
