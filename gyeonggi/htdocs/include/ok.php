@@ -72,6 +72,7 @@ if(isset($_POST['action'])){
 			$member = $pdo->query("select * from member where userid='{$_POST['userid']}' and pw='{$_POST['pw']}'")->fetch();
 			if($member == NULL){
 				echo "아이디와 비밀번호를 확인해주세요.";
+				exit();
 			}
 			
 			$_SESSION['userid'] = $member['userid'];
