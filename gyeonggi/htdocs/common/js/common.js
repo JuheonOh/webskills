@@ -138,10 +138,16 @@ function window_open(url, title){
 
 /* 클립보드로 복사 후 저작권 표시 */
 function copyRight(){
-	var originalText = window.clipboardData.getData('Text');
 	var copyrightText = "\r\n\r\n\r\n[출처] - 맛과 분위기가 살아있는 최고의 레스토랑 Quiabiero";
-	var outputText = originalText+copyrightText;
-	window.clipboardData.setData('Text', outputText);
+
+	if(navigator.clipboard){
+		navigator.clipboard.readText().then((originalText) => {
+			var outputText = originalText + copyrightText;
+			navigator.clipboard.writeText(outputText);
+		});
+	} else {
+		alert("이 브라우저에서는 클립보드 기능이 지원되지 않습니다.")
+	}
 }
 
 /* 메뉴 목록 */
