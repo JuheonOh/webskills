@@ -14,11 +14,11 @@
 
 ### 레스토랑
 
-![레스토랑](screenshots/2.png)
+<center>![레스토랑](screenshots/2.png)</center>
 
 ### 메뉴소개
 
-<p align="center">![메뉴소개](screenshots/3.png)</p>
+![메뉴소개](screenshots/3.png)
 
 ### 온라인 예약
 
