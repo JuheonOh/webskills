@@ -14,7 +14,9 @@
 
 ### 레스토랑
 
-<center>![레스토랑](screenshots/2.png)</center>
+<p align="center">
+  <img src="screenshots/2.png" alt="레스토랑" title="레스토랑" />
+</p>
 
 ### 메뉴소개
 
