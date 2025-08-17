@@ -74,13 +74,13 @@ function ajax(){
 			url : "/page/main3/room.php",
 			data : { room : room, redate : redate, time : time },
 			async : false,
-			success : function(){
-				if(data === ""){
-					$("#info").text("예약가능한 룸입니다.");
-					$("#rsv_btn").attr("disabled", false);
-				} else {
+			success : function(data){
+				if(data){
 					$("#info").text(data);
 					$("#rsv_btn").attr("disabled", true);
+				} else {
+					$("#info").text("예약가능한 룸입니다.");
+					$("#rsv_btn").attr("disabled", false);
 				}
 			}
 		});
@@ -109,13 +109,13 @@ function rsvFrm(frm){
 	if($("#room").val() == "") msg += $("#room").attr("title") + "을(를) 선택해주세요."; 
 	else if($("#redate").val() == "") msg += $("#redate").attr("title") + "을(를) 선택해주세요.";
 	else if($("#time").val() == "") msg += $("#time").attr("title") + "을(를) 선택해주세요.";
-	
+
 	else if(!$("#menu_list > tr").hasClass("check")){
 		msg += "메뉴를 1개이상 선택해주세요.";
 	} else {
 		$("input.spinner:not(:disabled)", frm).each(function(){
 			if($(this).val() == 0){
-				msg += $(this).attr("title") + " 수량을 1개이상 선택해주세요.";
+				msg += $(this).attr("title") + " 수량을 1개이상 선택해주세요. \r\n";
 			}
 		});
 	}
@@ -124,16 +124,15 @@ function rsvFrm(frm){
 		alert(msg);
 		return false;
 	}
-	
 	$.post(
 		"/include/ok.php",
 		$(frm).serialize() + "&room_cost=" + $("#room > option:checked").data("cost"),
 		function(data){
-			if(data === ""){
+			if(data){
+				alert(data);
+			} else {
 				alert("예약이 완료되었습니다.");
 				localStorage.removeItem("list");
-			} else {
-				alert(data);
 			}
 		}
 	);

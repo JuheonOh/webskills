@@ -70,8 +70,10 @@ while($list = $list_q->fetch()){
             <li>칭찬 한마디 : <?php echo hit($list['memo'], $arr); ?></li>
         </ul>
     </td>
+		<?php if($_SESSION['lv'] == "관리자"){ ?>
     <td>
     	<button title="삭제" onClick="del(this, <?php echo $list['idx']; ?>)">삭제</button>
     </td>
+		<?php } ?>
 </tr>
 <?php } ?>

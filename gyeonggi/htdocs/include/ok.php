@@ -28,11 +28,11 @@ if(isset($_POST['action'])){
 						echo "다른 시간대를 선택해주세요.";
 						exit();
 					}
-					
-					$cancel .= "action/table/time/name/cost/number/";
+
+					$cancel .= "action/table/time/name/cost/number";
 					$column = column($_POST, $cancel);
 					$add_sql = ", st_time='{$st_time}', en_time='{$en_time}'";
-					
+
 					q($_POST['action'], $_POST['table'], $column.$add_sql);
 					
 					$idx = $pdo->query("select * from rsv order by idx desc")->fetch();
