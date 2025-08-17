@@ -18,7 +18,7 @@
 
 ### 메뉴소개
 
-<center>![메뉴소개](screenshots/3.png)</center>
+<p align="center">![메뉴소개](screenshots/3.png)</p>
 
 ### 온라인 예약
 
