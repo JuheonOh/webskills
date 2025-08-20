@@ -25,6 +25,10 @@
   - [3과제 Client Side - (제주위키)](https://github.com/JuheonOh/webskills/tree/2017_%EC%A0%84%EA%B5%AD/3_ClientSide)
   - [4과제 Server Side - (제주호텔)](https://github.com/JuheonOh/webskills/tree/2017_%EC%A0%84%EA%B5%AD/4_ServerSide)
 
+## 실행방법
+
+[실행방법 문서](https://github.com/JuheonOh/webskills/blob/main/RUN.md) 참고
+
 ## 직종정의
 
 - 웹디자인 및 개발 직종은 웹사이트를 제작‧배포하는데 필요한 지식 및 기술, 태도 등을 활용하여, 가상 고객의 다양한 요구사항에 따라 실제로 운영이 가능한 수준의 완전한 웹사이트를 제작하는 직종이다.
