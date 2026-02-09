@@ -1,0 +1,322 @@
+/* Init */
+* { margin:0; padding:0; box-sizing: border-box; font-family: "나눔고딕"; }
+html, body { font-size:14px; }
+html { overflow-y:scroll; }
+body { font-size:14px; }
+ul, ol, li { list-style: none; }
+a { text-decoration: none; color:#000; }
+img { border:0; vertical-align: middle; }
+
+/* Layout */
+#wrap { min-width:1440px; overflow: hidden; }
+.wrap { max-width:1200px; margin:0 auto; position: relative; }
+#header { float:left; width:100%; }
+#contents { float:left; width:100%; }
+#footer { float:left; width:100%; height:240px; background-color:#625539; }
+
+/* LOGO */
+#logo { float:left; margin-top:20px; }
+#logo a { float:left; }
+#logo span { float:left; width:100%; }
+#logo span:first-child { font-size:12px; opacity: 0.26; }
+#logo span:last-child { font-size:28px; }
+
+
+/* Util */
+#util { float:right; line-height: 80px; }
+#util li { float:left; color:#e0e0e0; font-family: "맑은 고딕"; font-weight: bold; }
+#util li:nth-child(odd) { padding:0 30px; }
+#util li a { float:left; color:#666666; transition: background-color .5s, color .5s; padding:0 10px; }
+
+#util li a:hover { background-color:#09f; color:#fff; }
+
+
+/* Main Visual */
+#mainVisual { float:left; width:100%; height:720px; position: relative; overflow: hidden; }
+#mainVisual .image { position: absolute; left:0; top:0; width:100%; height:100%; }
+#mainVisual .image img { width:100%; min-height: 100%; }
+#mainVisual .text { width:100%; height:750px; position: absolute; left:0; top:0; }
+#mainVisual .text ul { float:left; width:100%; text-align: center; font-family: "굴림"; opacity: 0.5; line-height: 25px; margin-top:55px; }
+#mainVisual .text ul li { float:left; width:100%; }
+#mainVisual .text h2 { float:left; width:100%; font-weight: bold; font-size: 112px; color:#1d486b; text-align: center; margin-top:10px; }
+#prevBtn { position: absolute; left:0; top:50%; transform: translateY(-50%); z-index:100; }
+#nextBtn { position: absolute; right:0; top:50%; transform: translateY(-50%); z-index:100; }
+
+
+/* Content */
+.content { float:left; width:100%; }
+
+/* Section1 */
+#section { float:left; width:100%; }
+#section .cableCar { position: absolute; left:-100px; top:-30px; z-index:-1; }
+
+#namsan { float:right; margin-top:70px; font-family: "굴림"; margin-right:30px; }
+#namsan h3 { float:left; width:100%; text-align: right; font-size:25px; font-weight: normal; letter-spacing: -0.5px; color:#333333; margin-bottom: 10px; }
+#namsan h3 span { font-size: 35px; color:#0d3182; }
+#namsan .text { float:right; }
+#namsan .text li { float:left; width:100%; text-align: right; color:#666666; line-height: 25px; }
+#namsan .glyphicon { float:right; margin-top:20px; transition: background-color .5s; padding:10px 20px; border-radius: 10px; }
+#namsan .glyphicon:hover { background-color:#09f; }
+
+/* Tower */
+#tower { float:left; margin-left:60px; margin-top:-70px; }
+#tower .image { float:left; width:100%; position: relative; }
+#tower .image img { float:left; }
+#tower .text { position: absolute; left:40px; bottom:40px; width:100%; color:#fff; }
+#tower .text h3 { float:left; width:100%; font-size: 30px; font-weight: normal; }
+#tower .text h3 span { font-size: 50px; }
+#tower .text p { float:left; width:70%; font-size:12px; line-height: 20px; opacity:.5; margin-left:15px; }
+
+/* dongsang */
+#dongsang { float:right; margin-right:30px; margin-top:-250px; }
+#dongsang .image { float:left; width:100%; }
+#dongsang .image img { float:left; }
+
+/* dong Text */
+#dongText { float:left; width:100%; margin-left:60px; margin-top:-110px; }
+#dongText h3 { float:left; width:100%; color: #9e8967; font-family: "굴림"; font-size:25px; margin-bottom:15px; }
+#dongText ul { float:left; width:100%; line-height: 22px; color:#666666; }
+#dongText ul li { float:left; width:100%; }
+#dongText .glyphicon { float:left; margin-top:15px; transition: background-color .5s; padding:10px 20px; border-radius: 10px; }
+#dongText .glyphicon img { float:left; }
+#dongText .glyphicon:hover { background-color:#09f; }
+
+/* bg */
+#bg { float:left; width:100%; margin-top:-120px; }
+#bg img { float:left; width:100%; }
+
+/* Footer Top */
+#footerTop { float:left; width:100%; position: relative; }
+#footerTop .leftImg { float:left; width:calc(100% / 3); height:200px; }
+#footerTop .leftImg img { float:left; width:100%; height: 100%; }
+
+#footerTop .text { position: absolute; left:50%; top:50%; transform: translate(-50%, -50%); text-align: center; width:40%; height:350px; background-color:#fff; }
+#footerTop .top { float:left; width:100%; height:70%; }
+#footerTop .glyphicon3 { float:left; width:100%; margin-top:65px; margin-bottom:25px; }
+#footerTop .glyphicon3 img { transition: background-color .5s; padding:10px 20px; border-radius: 10px; }
+#footerTop .glyphicon3:hover img { background-color:#09f; }
+#footerTop .top ul { float:left; width:100%; margin-bottom:20px; }
+#footerTop .top ul li { float:left; width:100%; font-size:20px; line-height: 28px; color:#333333; }
+#footerTop .top ul li span { color:#5f1600; }
+
+#footerTop .bottom { float:left; width:100%; height:30%; padding:30px; border-top:1px solid #dadada; background-color:#ededed; }
+#footerTop .bottom ul { float:left; width:100%; }
+#footerTop .bottom ul li { float:left; width:100%; line-height: 22px; color:#666666; }
+
+#footerTop .rightImg { float:right; width:calc(100% / 3); height:200px; }
+#footerTop .rightImg img { float:left; width:100%; height: 100%; }
+
+/* Footer */
+#footer .text { float:left; width:100%; height:240px; position: relative; }
+#footer ul { position: absolute; left:50%; bottom:65px; text-align: center; width:100%; transform: translateX(-50%); border-top:1px solid #554931; padding-top:20px; } 
+#footer ul li { float:left; width:100%; font-weight: bold; line-height: 23px; opacity: .5; }
+
+
+/* Responsive Web min width 1440px */
+@media(min-width:1440px){
+	#wrap { min-width:inherit; }
+	.wrap { width: inherit; }
+}
+
+/* Responsive Web max width 1440px */
+@media(max-width:1457px){
+	#wrap { min-width: inherit; }
+	.wrap { width:inherit; }
+}
+
+/* Responsive Web max width 1440px */
+@media(max-width:780px){
+	#wrap { min-width: inherit; }
+	.wrap { width:inherit; }
+
+
+	/* LOGO */
+	#logo { float:left; margin-top:20px; margin-left:20px; }
+	#logo a { float:left; }
+	#logo span { float:left; }
+	#logo span:first-child { font-size:12px; opacity: 0.26; }
+	#logo span:last-child { font-size:28px; }
+
+
+	/* Util */
+	#util { float:right; line-height: 80px; }
+	#util li { float:left; color:#e0e0e0; font-family: "맑은 고딕"; font-weight: bold; }
+	#util li:nth-child(odd) { padding:0 30px; }
+	#util li a { float:left; color:#666666; padding:0 5px; }
+
+
+	/* Main Visual */
+	#mainVisual { float:left; width:100%; height:400px; position: relative; overflow: hidden; }
+	#mainVisual .image { position: absolute; left:0; top:0px; width:100%; height:100%; }
+	#mainVisual .image img { width:100%; min-height: 100%; }
+	#mainVisual .text { width:100%; height:400px; position: absolute; left:0; top:0; }
+	#mainVisual .text ul { float:left; width:100%; text-align: center; font-family: "굴림"; opacity: 0.5; line-height: 25px; margin-top:25px; }
+	#mainVisual .text ul li { float:left; width:100%; }
+	#mainVisual .text h2 { float:left; width:100%; font-weight: bold; font-size: 112px; color:#1d486b; text-align: center; margin-top:10px; }
+	#prevBtn { position: absolute; left:0; top:50%; transform: translateY(-50%); z-index:100; }
+	#nextBtn { position: absolute; right:0; top:50%; transform: translateY(-50%); z-index:100; }
+
+
+	/* Content */
+	.content { float:left; width:100%; }
+
+	/* Section1 */
+	#section { float:left; width:100%; }
+	#section .cableCar { position: absolute; left:-100px; top:-30px; }
+
+	#namsan { float:right; margin-top:50px; font-family: "굴림"; margin-right:30px; }
+	#namsan h3 { float:left; width:100%; text-align: right; font-size:25px; font-weight: normal; letter-spacing: -0.5px; color:#333333; margin-bottom: 10px; }
+	#namsan h3 span { font-size: 35px; color:#0d3182; }
+	#namsan .text { float:right; }
+	#namsan .text li { float:left; width:100%; text-align: right; color:#666666; line-height: 25px; }
+	#namsan .glyphicon { float:right; margin-top:20px; }
+
+	/* Tower */
+	#tower { float:left; width:100%; margin-left:0; margin-top:50px; padding:0 20px; }
+	#tower .image { float:left; width:100%; position: relative; }
+	#tower .image img { float:left; width:100%; }
+	#tower .text { position: absolute; left:40px; bottom:40px; width:100%; color:#fff; }
+	#tower .text h3 { float:left; width:100%; font-size: 30px; font-weight: normal; }
+	#tower .text h3 span { font-size: 50px; }
+	#tower .text p { float:left; width:70%; font-size:12px; line-height: 20px; opacity:.5; margin-left:15px; }
+
+	/* dongsang */
+	#dongsang { float:left; width:100%; margin-right:0; margin-top:60px; padding:0 20px; }
+	#dongsang .image { float:left; width:100%; }
+	#dongsang .image img { float:left; width:100%; }
+
+	/* dong Text */
+	#dongText { float:left; width:100%; margin-left:0; margin-top:30px; padding:0 20px; }
+	#dongText h3 { float:left; width:100%; color: #9e8967; font-family: "굴림"; font-size:25px; margin-bottom:15px; }
+	#dongText ul { float:left; width:100%; line-height: 22px; color:#666666; }
+	#dongText ul li { float:left; width:100%; }
+	#dongText .glyphicon { float:left; margin-top:15px; }
+	#dongText .glyphicon img { float:left; }
+
+	/* bg */
+	#bg { float:left; width:100%; margin-top:-30px; }
+	#bg img { float:left; width:100%; }
+
+	/* Footer Top */
+	#footerTop { float:left; width:100%; position: relative; }
+	#footerTop > div { width:100% !important; }
+	#footerTop .leftImg { float:left; height:200px; }
+	#footerTop .leftImg img { float:left; width:100%; height: 100%; }
+
+	#footerTop .text { float:left; position: relative; left:0; top:0%; transform: translate(0%, 0%); text-align: center; width:100%; height:350px; background-color:#fff; }
+	#footerTop .top { float:left; width:100%; height:70%; }
+	#footerTop .glyphicon3 { float:left; width:100%; margin-top:65px; margin-bottom:25px; }
+	#footerTop .top ul { float:left; width:100%; margin-bottom:20px; }
+	#footerTop .top ul li { float:left; width:100%; font-size:20px; line-height: 28px; color:#333333; }
+	#footerTop .top ul li span { color:#5f1600; }
+
+	#footerTop .bottom { float:left; width:100%; height:30%; padding:30px; border-top:1px solid #dadada; background-color:#ededed; }
+	#footerTop .bottom ul { float:left; width:100%; }
+	#footerTop .bottom ul li { float:left; width:100%; line-height: 22px; color:#666666; }
+
+	#footerTop .rightImg { float:right; width:calc(100% / 3); height:200px; }
+	#footerTop .rightImg img { float:left; width:100%; height: 100%; }
+
+	/* Footer */
+	#footer .text { float:left; width:100%; height:240px; position: relative; }
+	#footer ul { position: absolute; left:50%; bottom:65px; text-align: center; width:100%; transform: translateX(-50%); border-top:1px solid #554931; padding-top:20px; } 
+	#footer ul li { float:left; width:100%; font-weight: bold; line-height: 23px; opacity: .5; }
+}
+
+/* Responsive Web max width 480px */
+@media(max-width:480px){
+	#wrap { min-width: inherit; padding:0 20px; }
+	.wrap { width:inherit; }
+
+	/* LOGO */
+	#logo { float:left; width:100%; text-align: center; margin-top:30px; margin-left:0; }
+	#logo a { float:left; width:100%; }
+	#logo span { float:left; width:100%; }
+	#logo span:first-child { font-size:12px; opacity: 0.26; }
+	#logo span:last-child { font-size:28px; }
+
+
+	/* Util */
+	#util { float:left; width:100%; line-height: 80px; }
+	#util li { float:left; width:calc(100% / 5); color:#e0e0e0; font-family: "맑은 고딕"; font-weight: bold; text-align: center; }
+	#util li:nth-child(odd) { margin:0; padding:0 10px; }
+	#util li a { float:left; color:#666666; }
+
+
+	/* Main Visual */
+	#mainVisual { float:left; width:100%; height:350px; position: relative; overflow: hidden; }
+	#mainVisual .image { position: absolute; left:0; top:0px; width:100%; height:100%; }
+	#mainVisual .image img { width:100%; min-height: 100%; }
+	#mainVisual .text { width:100%; height:400px; position: absolute; left:0; top:0; }
+	#mainVisual .text ul { float:left; width:100%; text-align: center; font-family: "굴림"; opacity: 0.5; line-height: 25px; margin-top:25px; font-size:12px; }
+	#mainVisual .text ul li { float:left; width:100%; }
+	#mainVisual .text h2 { float:left; width:100%; font-weight: bold; font-size: 85px; color:#1d486b; text-align: center; margin-top:10px; }
+	#prevBtn { position: absolute; left:0; top:50%; transform: translateY(-50%); z-index:100; }
+	#nextBtn { position: absolute; right:0; top:50%; transform: translateY(-50%); z-index:100; }
+
+
+	/* Content */
+	.content { float:left; width:100%; }
+
+	/* Section1 */
+	#section { float:left; width:100%; }
+	#section .cableCar { position: absolute; left:-100px; top:-30px; }
+
+	#namsan { float:left; width:100%; margin-top:50px; font-family: "굴림"; }
+	#namsan h3 { float:left; width:100%; text-align: right; font-size:25px; font-weight: normal; letter-spacing: -0.5px; color:#333333; margin-bottom: 10px; }
+	#namsan h3 span { font-size: 35px; color:#0d3182; }
+	#namsan .text { float:right; }
+	#namsan .text li { float:left; width:100%; text-align: right; color:#666666; line-height: 25px; font-size:12px; }
+	#namsan .glyphicon { float:right; margin-top:20px; }
+
+	/* Tower */
+	#tower { float:left; width:100%; margin-left:0; margin-top:50px; }
+	#tower .image { float:left; width:100%; position: relative; }
+	#tower .image img { float:left; width:100%; }
+	#tower .text { position: absolute; left:20px; bottom:20px; width:100%; color:#fff; }
+	#tower .text h3 { float:left; width:100%; font-size: 30px; font-weight: normal; }
+	#tower .text h3 span { font-size: 50px; }
+	#tower .text p { float:left; width:70%; font-size:12px; line-height: 20px; opacity:.5; margin-left:15px; }
+
+	/* dongsang */
+	#dongsang { float:left; width:100%; margin-right:0; margin-top:60px; }
+	#dongsang .image { float:left; width:100%; }
+	#dongsang .image img { float:left; width:100%; }
+
+	/* dong Text */
+	#dongText { float:left; width:100%; margin-left:0; margin-top:30px; }
+	#dongText h3 { float:left; width:100%; color: #9e8967; font-family: "굴림"; font-size:25px; margin-bottom:15px; }
+	#dongText ul { float:left; width:100%; line-height: 22px; color:#666666; }
+	#dongText ul li { float:left; width:100%; }
+	#dongText .glyphicon { float:left; margin-top:15px; }
+	#dongText .glyphicon img { float:left; }
+
+	/* bg */
+	#bg { float:left; width:100%; margin-top:60px; border-bottom:1px solid #bfbfbf; padding-bottom:20px;}
+	#bg img { float:left; width:100%; }
+
+	/* Footer Top */
+	#footerTop { float:left; width:100%; position: relative; margin-top:20px; }
+	#footerTop > div { width:100% !important; }
+	#footerTop .leftImg { float:left; height:200px; }
+	#footerTop .leftImg img { float:left; width:100%; height: 100%; }
+
+	#footerTop .text { float:left; position: relative; left:0; top:0%; transform: translate(0%, 0%); text-align: center; width:100%; height:350px; background-color:#fff; border:1px solid #bfbfbf; }
+	#footerTop .top { float:left; width:100%; height:70%; }
+	#footerTop .glyphicon3 { float:left; width:100%; margin-top:65px; margin-bottom:25px; }
+	#footerTop .top ul { float:left; width:100%; margin-bottom:20px; }
+	#footerTop .top ul li { float:left; width:100%; font-size:18px; line-height: 28px; color:#333333; }
+	#footerTop .top ul li span { color:#5f1600; }
+
+	#footerTop .bottom { float:left; width:100%; height:30%; padding:30px; border-top:1px solid #dadada; background-color:#ededed; }
+	#footerTop .bottom ul { float:left; width:100%; }
+	#footerTop .bottom ul li { float:left; width:100%; line-height: 22px; color:#666666; font-size:13px; }
+
+	#footerTop .rightImg { float:right; width:calc(100% / 3); height:200px; }
+	#footerTop .rightImg img { float:left; width:100%; height: 100%; }
+
+	/* Footer */
+	#footer .text { float:left; width:100%; height:240px; position: relative; }
+	#footer ul { position: absolute; left:50%; bottom:65px; text-align: center; width:100%; transform: translateX(-50%); border-top:1px solid #554931; padding-top:20px; } 
+	#footer ul li { float:left; width:100%; font-weight: bold; font-size:13px; line-height: 23px; opacity: .5; padding:0 10px; }
+}
