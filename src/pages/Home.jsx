@@ -11,7 +11,7 @@ const projects = [
     year: "2016",
     title: "제51회 전국기능경기대회",
     desc: "CSS Skew 변형과 Checkbox Hack을 활용한 Pure CSS 기반의 '아름누리 예술재단' 사이트. SVG 지도와 Canvas 실시간 미디어 프로세싱이 적용된 SPA를 포함합니다.",
-    img: "/images/screenshots/2016-national.jpg",
+    img: "images/screenshots/2016-national.jpg",
     imgAlt: "2016 National Project Screenshot",
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     year: "2017",
     title: "광주광역시 지방기능경기대회",
     desc: "1440px 와이드 레이아웃과 정교한 타이포그래피가 돋보이는 서울 여행 가이드. 레거시 환경을 가정한 app.js 단일 파일 기반의 동적 DOM 제어 기술을 다룹니다.",
-    img: "/images/screenshots/2017-local.jpg",
+    img: "images/screenshots/2017-local.jpg",
     imgAlt: "2017 Local Project Screenshot",
   },
   {
@@ -29,7 +29,7 @@ const projects = [
     year: "2017",
     title: "제52회 전국기능경기대회",
     desc: "3D Flip 슬라이더와 WebSQL 클라이언트 DB를 활용한 '제주 위키' 앱. LocalStorage 기반의 상태 유지와 무한 스크롤 등 고도화된 웹 기술의 집약체입니다.",
-    img: "/images/screenshots/2017-national.jpg",
+    img: "images/screenshots/2017-national.jpg",
     imgAlt: "2017 National Project Screenshot",
   },
 ];

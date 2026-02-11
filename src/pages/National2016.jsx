@@ -23,7 +23,7 @@ export default function National2016() {
   const task2 = {
     title: "Task 2: Website Layout (Pure CSS)",
     description: "JavaScript 사용이 전면 금지된 환경에서 CSS3만으로 인터랙션을 구현했습니다.",
-    url: "/2016-national/2-WebsiteLayout/index.html",
+    url: "2016-national/2-WebsiteLayout/index.html",
   };
 
   const requirements = {
@@ -150,7 +150,7 @@ export default function National2016() {
       </>
     ),
     tags: ["SVG Map Interaction", "Video Frame Capture", "Drag & Drop", "History Management"],
-    url: "/2016-national/3-ClientSide/index.html",
+    url: "2016-national/3-ClientSide/index.html",
     guide: task3Guide,
   };
 

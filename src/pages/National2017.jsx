@@ -22,7 +22,7 @@ export default function National2017() {
 
   const task2 = {
     title: "Task 2: Website Layout",
-    url: "/2017-national/2-WebsiteLayout/index.html",
+    url: "2017-national/2-WebsiteLayout/index.html",
   };
 
   const requirements = {
@@ -158,7 +158,7 @@ export default function National2017() {
       </>
     ),
     tags: ["WebSQL DB", "Infinite Scroll", "State Persistence", "jQuery UI"],
-    url: "/2017-national/3-ClientSide/index.html",
+    url: "2017-national/3-ClientSide/index.html",
     guide: task3Guide,
   };
 
