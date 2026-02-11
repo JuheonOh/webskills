@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+/** 
+ * [1] THEME: Design System Tokens
+ * 모든 수치와 색상의 기초가 되는 변수 정의입니다.
+ */
+@theme {
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1600px;
+
+  /* Custom Spacing */
+  --spacing-8xl: 1440px;
+  --spacing-9xl: 1600px;
+  --spacing-10xl: 1680px;
+
+  /* Premium Color Palette */
+  --color-primary: #e6e7e3; /* 따뜻한 연회색 배경 */
+  --color-surface: #ffffff; /* 카드 및 섹션 배경 */
+  --color-accent: #b6e63a; /* 시그니처 형광 연두 */
+  --color-accent-hover: #a3d132;
+
+  --color-head: #1a1a1a; /* 깊은 대비의 헤딩 색상 */
+  --color-body: #3c3c3c; /* 가독성을 높인 본문 색상 */
+  --color-muted: #767676; /* 메타 정보용 회색 */
+
+  /* Shadows & Radius */
+  --shadow-soft: 0px 12px 32px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0px 20px 48px rgba(0, 0, 0, 0.08);
+
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  /* Typography */
+  --font-pretendard:
+    "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    system-ui, sans-serif;
+}
+
+/**
+ * [2] BASE: Global Tag Styles
+ * HTML 태그의 기본 가독성 및 디자인을 정의합니다.
+ */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-head);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100%;
+    background-color: var(--color-primary);
+    color: var(--color-head);
+    font-family: var(--font-pretendard);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.625;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-head);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+
+  p {
+    color: var(--color-body);
+    word-break: keep-all;
+    letter-spacing: -0.01em;
+  }
+
+  /* 가독성 향상을 위한 강조 스타일 */
+  strong {
+    color: var(--color-head);
+    font-weight: 700;
+    background: linear-gradient(
+      120deg,
+      rgba(182, 230, 28, 0.25) 0%,
+      rgba(182, 230, 28, 0.25) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 0.35em;
+    background-position: 0 88%;
+    padding: 0 1px;
+  }
+
+  /* 기술 용어용 코드 스타일 */
+  code {
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    @apply text-head rounded bg-black/5 px-1.5 py-0.5 text-[0.85em] font-medium;
+  }
+}
+
+/**
+ * [3] COMPONENTS: Reusable UI Elements
+ * 반복적으로 사용되는 UI 조각들입니다.
+ */
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply bg-accent text-head rounded-pill hover:bg-accent-hover hover:shadow-soft inline-flex cursor-pointer items-center justify-center px-8 py-3.5 text-base font-bold transition-all duration-300 ease-out hover:-translate-y-1;
+  }
+
+  .btn-secondary {
+    @apply text-head rounded-pill inline-flex cursor-pointer items-center justify-center border-2 border-black/10 bg-transparent px-8 py-3.5 text-base font-semibold transition-all duration-300 hover:border-black/20 hover:bg-black/4;
+  }
+
+  /* Cards */
+  .card-base {
+    @apply bg-surface shadow-soft hover:shadow-hover overflow-hidden rounded-lg border border-black/3 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-2;
+  }
+
+  /* Navigation Bar */
+  .nav-clean {
+    @apply sticky top-0 z-50 border-b border-black/4 bg-white/80 backdrop-blur-xl;
+  }
+
+  .nav-link {
+    @apply text-body rounded-pill hover:text-head px-5 py-2.5 text-[0.95rem] font-medium transition-all duration-200 hover:bg-black/4;
+  }
+
+  .nav-link.active {
+    @apply text-head bg-black/5;
+  }
+
+  /* Browser Mockup UI */
+  .browser-frame {
+    @apply shadow-soft overflow-hidden rounded-xl border border-black/5 bg-white;
+  }
+
+  .browser-header {
+    @apply flex h-12 items-center gap-2 border-b border-black/4 bg-[#fafafa] px-6;
+  }
+
+  .dot {
+    @apply h-2.5 w-2.5 rounded-full bg-[#E5E5E5];
+  }
+}
+
+/**
+ * [4] UTILITIES & ANIMATIONS
+ * 가장 높은 우선순위를 갖는 도구들입니다.
+ */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+/* Page Entry Animation */
+.animate-enter {
+  animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  opacity: 0;
+}
+
+/* Floating Animation for Graphics */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Keyframes Definitions */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}

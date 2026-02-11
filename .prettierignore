@@ -1,0 +1,6 @@
+dist
+node_modules
+public
+.git
+package-lock.json
+*.pdf
