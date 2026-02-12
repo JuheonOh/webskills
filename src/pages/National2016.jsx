@@ -78,7 +78,7 @@ export default function National2016() {
             <div className="absolute left-0 top-1.5 h-8 w-8 rounded-full border-2 border-accent bg-white text-center text-xs font-bold leading-7 text-head shadow-sm">
               02
             </div>
-            <h5 className="mb-2 font-bold text-head text-lg tracking-tight">SVG 지능형 인터랙션</h5>
+            <h5 className="mb-2 font-bold text-head text-lg tracking-tight">SVG 인터랙션</h5>
             <p className="text-sm leading-relaxed text-body">
               SVG 좌표 데이터와 경로(Path)를 연동하여 마우스 오버 시 실시간
               하이라이트 효과를 구현했으며, 클릭 시 해당 지역의 JSON 데이터를
@@ -97,7 +97,7 @@ export default function National2016() {
             <p className="text-sm leading-relaxed text-body">
               MP4 파일 업로드 시 <code>Canvas API</code>를 활용하여 영상의
               지정된 시간(1.5초) 프레임을 추출하고, 이를 썸네일로 자동 변환하여
-              갤러리에 시각화하는 고난도 기술을 포함합니다.
+              갤러리에 시각화하는 기능을 구현했습니다.
             </p>
           </div>
 
@@ -146,7 +146,7 @@ export default function National2016() {
         서울시 25개 자치구 정보를 제공하는 <strong>'인사이드서울'</strong> 웹 애플리케이션입니다. <br />
         SVG 지도의 좌표 데이터와 JSON 비동기 로딩을 결합하여 인터랙티브한 대시보드를 구축했으며,{" "}
         Canvas 기반의 <strong>실시간 미디어 프로세싱</strong>(동영상 프레임 캡처)과 드래그 앤 드롭 파일 관리 시스템을{" "}
-        별도의 프레임워크 없이 <strong>자바스크립트와 jQuery</strong>만으로 완벽하게 구현했습니다.
+        별도의 프레임워크 없이 <strong>자바스크립트와 jQuery</strong>만으로 구현했습니다.
       </>
     ),
     tags: ["SVG Map Interaction", "Video Frame Capture", "Drag & Drop", "History Management"],

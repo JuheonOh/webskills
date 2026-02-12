@@ -105,7 +105,7 @@ export default function National2017() {
             <p className="text-sm leading-relaxed text-body">
               사용자가 바닥에 도달할 때마다 3개씩 추가 데이터를 로드하는 무한
               스크롤 시스템이 탑재되었으며, <code>scrollTop</code> 값을 추적하여
-              마지막 보던 위치로 자동 복구되는 기능을 포함합니다.
+              마지막 보던 위치로 자동 복구되는 기능을 구현했습니다.
             </p>
           </div>
 
@@ -120,7 +120,7 @@ export default function National2017() {
             <p className="text-sm leading-relaxed text-body">
               관리자 모드에서 '더 보기 &gt; 정보수정'을 통해 텍스트 및 이미지를
               즉시 변경할 수 있으며, <code>SessionStorage</code> 기반의 사용자
-              인증을 통해 본인 댓글만 삭제 가능한 정교한 CRUD 로직을 갖췄습니다.
+              인증을 통해 본인 댓글만 삭제 가능한 CRUD 로직을 처리합니다.
             </p>
           </div>
         </div>
@@ -154,7 +154,7 @@ export default function National2017() {
         제주도의 풍부한 관광 정보를 관리하는 <strong>'제주 위키'</strong> 웹 애플리케이션입니다. <br />
         브라우저 내장 데이터베이스인 <strong>WebSQL</strong>을 이용해 서버 없이도 로그인, 회원가입, 댓글, 게시물 수정을
         완벽하게 처리하며, <strong>LocalStorage</strong>와 <strong>SessionStorage</strong>를 결합해
-        새로고침 후에도 스크롤 위치와 검색 필터를 유지하는 수준 높은 상태 관리 로직을 구현했습니다.
+        새로고침 후에도 스크롤 위치와 검색 필터를 유지하는 상태 관리 로직을 구현했습니다.
       </>
     ),
     tags: ["WebSQL DB", "Infinite Scroll", "State Persistence", "jQuery UI"],
