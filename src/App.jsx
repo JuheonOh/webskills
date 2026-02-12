@@ -31,10 +31,12 @@ export default function App() {
             to="/"
             className="group flex items-center gap-3 no-underline transition-opacity hover:opacity-80"
           >
-            <div className="text-accent flex h-8 w-8 items-center justify-center rounded-full bg-black text-sm font-bold">
-              W
-            </div>
-            <span className="text-head text-lg font-bold">WebSkills</span>
+
+            <span className="flex items-baseline tracking-tighter text-head text-xl font-bold gap-0.5">
+              Juheon
+              <span className="h-1.5 w-1.5 rounded-full bg-accent ring-4 ring-accent/20 transition-all duration-300 group-hover:scale-125"></span>
+              WebSkills
+            </span>
           </Link>
 
           <div className="hidden gap-1 md:flex">
