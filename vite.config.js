@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "/webskills/",
   server: {
-    // host: true,
+    host: true,
   },
   build: {
     rollupOptions: {

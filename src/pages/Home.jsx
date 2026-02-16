@@ -52,16 +52,27 @@ export default function Home() {
           <div className="animate-enter z-10 order-2 flex max-w-2xl flex-col gap-8 pb-12 lg:order-1 lg:pb-0">
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2">
-                <span className="bg-accent text-black rounded-full px-3 py-1 text-[10px] font-bold tracking-widest uppercase mb-1">
+                <span className="bg-accent mb-1 rounded-full px-3 py-1 text-[10px] font-bold tracking-widest text-black uppercase">
                   Established 2016
                 </span>
               </div>
               <h1 className="text-head -ml-1 text-7xl leading-[1.2] font-extrabold tracking-tight">
                 디지털의 완벽함을 <br />
-                <span className="relative inline-block mt-2">
+                <span className="relative mt-2 inline-block">
                   빚어내다.
-                  <svg className="absolute -bottom-2 left-0 -z-10 w-full" viewBox="0 0 300 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 15C50 5 150 5 295 15" stroke="var(--color-accent)" strokeWidth="8" strokeLinecap="round" opacity="0.6" />
+                  <svg
+                    className="absolute -bottom-2 left-0 -z-10 w-full"
+                    viewBox="0 0 300 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 15C50 5 150 5 295 15"
+                      stroke="var(--color-accent)"
+                      strokeWidth="8"
+                      strokeLinecap="round"
+                      opacity="0.6"
+                    />
                   </svg>
                 </span>
               </h1>
@@ -107,8 +118,8 @@ export default function Home() {
           </div>
 
           {/* Right: Graphic */}
-          <div className="animate-enter relative order-1 flex h-[500px] w-full items-center justify-center delay-200 lg:order-2 lg:h-full">
-            <div className="relative h-[460px] w-[320px] lg:h-[600px] lg:w-[480px] animate-float">
+          <div className="animate-enter relative order-1 flex h-125 w-full items-center justify-center delay-200 lg:order-2 lg:h-full">
+            <div className="animate-float relative h-115 w-[320px] lg:h-150 lg:w-120">
               <div className="absolute top-0 right-0 h-full w-full rotate-6 transform rounded-[40px] bg-[#D4D6D2] transition-transform duration-1000 group-hover:rotate-12"></div>
               <div className="bg-accent absolute top-0 right-0 h-full w-full rotate-3 transform rounded-[40px] opacity-90 shadow-xl transition-transform duration-1000 group-hover:rotate-6"></div>
               <div className="bg-surface absolute inset-0 transform overflow-hidden rounded-[40px] shadow-2xl transition-transform duration-700 hover:-translate-y-4">

@@ -76,7 +76,7 @@ function LazyIframe({
       </div>
 
       {isLoading && (
-        <div className="absolute inset-0 top-[48px] z-0 bg-white p-12">
+        <div className="absolute inset-0 top-12 z-0 bg-white p-12">
           <div className="mx-auto flex h-full max-w-6xl animate-pulse flex-col gap-12">
             {/* Navigation Skeleton (Flex) */}
             <div className="flex items-center justify-between">
@@ -113,7 +113,7 @@ function LazyIframe({
         <iframe
           src={src}
           title={title}
-          className={`w-full ${heightClass} border-0 duration-500 transition-opacity ${isLoading ? "opacity-0" : "opacity-100"}`}
+          className={`w-full ${heightClass} border-0 transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100"}`}
           onLoad={() => setIsLoading(false)}
           loading="lazy"
         />
@@ -153,7 +153,7 @@ export default function ProjectDetail({
       </div>
 
       {/* Hero Section */}
-      <div className="mx-auto my-32 max-w-3xl"> {/* 너비를 3xl로 줄여 독서 집중도 향상 */}
+      <div className="mx-auto my-32 max-w-3xl">
         <div className="mb-6 flex items-center gap-3">
           <span className="bg-primary text-head rounded-full px-3 py-1 text-xs font-bold tracking-wider uppercase">
             {meta.category}
@@ -162,7 +162,7 @@ export default function ProjectDetail({
             {meta.year} {meta.location}
           </span>
         </div>
-        <h1 className="text-head pb-10 text-4xl leading-[1.15] font-extrabold md:text-6xl tracking-tight">
+        <h1 className="text-head pb-10 text-4xl leading-[1.15] font-extrabold tracking-tight md:text-6xl">
           {meta.title}
           <br />
           <span className="text-body block pt-4 text-2xl font-normal md:text-3xl">
@@ -175,7 +175,7 @@ export default function ProjectDetail({
       </div>
 
       {/* Task 2 Iframe */}
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto max-w-7xl">
         <h3 className="text-muted flex items-center gap-4 pb-4 text-sm font-bold tracking-wider uppercase">
           {task2.title}
           <span className="h-px flex-1 bg-black/10"></span>
@@ -190,8 +190,8 @@ export default function ProjectDetail({
       />
 
       {/* Challenge & Solution */}
-      <div className="mx-auto mb-36 flex max-w-7xl flex-col items-start gap-12 md:flex-row lg:gap-24 justify-between">
-        <div className="self-center flex flex-col gap-8 flex-1">
+      <div className="mx-auto mb-36 flex max-w-7xl flex-col items-start justify-between gap-12 md:flex-row lg:gap-24">
+        <div className="flex flex-1 flex-col gap-8 self-center">
           <h2 className="text-head text-3xl font-extrabold tracking-tight">
             {requirements.title}
           </h2>
@@ -210,7 +210,7 @@ export default function ProjectDetail({
           </ul>
         </div>
 
-        <div className="bg-surface shadow-soft rounded-4xl border border-black/5 p-12 basis-5/12">
+        <div className="bg-surface shadow-soft basis-5/12 rounded-4xl border border-black/5 p-12">
           <h3 className="text-head mb-6 text-xl font-bold">Design Specs</h3>
 
           <div className="space-y-6">
@@ -253,9 +253,11 @@ export default function ProjectDetail({
 
       {/* Task 3 */}
       <div className="max-w-8xl mx-auto mb-40 border-t border-black/5 pt-28">
-        <div className="flex flex-col items-start gap-12 lg:gap-24 max-w-7xl mx-auto mb-20 md:flex-row justify-between">
-          <div className="sticky top-38 flex flex-col gap-8 flex-1">
-            <h2 className="text-head text-3xl font-extrabold tracking-tight">{task3.title}</h2>
+        <div className="mx-auto mb-20 flex max-w-7xl flex-col items-start justify-between gap-12 md:flex-row lg:gap-24">
+          <div className="sticky top-38 flex flex-1 flex-col gap-8">
+            <h2 className="text-head text-3xl font-extrabold tracking-tight">
+              {task3.title}
+            </h2>
             <div className="text-body text-[1.125rem] leading-relaxed break-keep">
               {task3.description}
             </div>
@@ -270,7 +272,7 @@ export default function ProjectDetail({
               ))}
             </div>
           </div>
-          <div className="bg-surface shadow-soft rounded-4xl border border-black/5 p-10 basis-5/12">
+          <div className="bg-surface shadow-soft basis-5/12 rounded-4xl border border-black/5 p-10">
             {task3.guide}
           </div>
         </div>
