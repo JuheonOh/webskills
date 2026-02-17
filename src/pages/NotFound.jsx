@@ -4,12 +4,12 @@ import { Helmet } from "react-helmet-async";
 
 export default function NotFound() {
   return (
-    <div className="animate-enter flex min-h-[70vh] flex-col items-center justify-center px-6 text-center">
+    <div className="animate-enter flex min-h-70vh flex-col items-center justify-center px-4 py-10 text-center sm:px-6">
       <Helmet>
         <title>Page Not Found | WebSkills Archive</title>
         <meta name="robots" content="noindex" />
       </Helmet>
-      <div className="text-head mb-4 text-[120px] leading-none font-bold opacity-10">
+      <div className="text-head mb-4 text-[72px] leading-none font-bold opacity-10 sm:text-[120px]">
         404
       </div>
       <h1 className="text-head mb-4 text-3xl font-bold">Page Not Found</h1>

@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+﻿import React, { Suspense, useState } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 
 // Lazy load pages for code splitting
@@ -10,26 +10,28 @@ const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 // Loading Spinner Component
 const LoadingFallback = () => (
-  <div className="flex min-h-[50vh] items-center justify-center">
+  <div className="min-h-50vh flex items-center justify-center">
     <div className="border-primary border-t-accent h-8 w-8 animate-spin rounded-full border-2"></div>
   </div>
 );
 
 export default function App() {
   const { pathname } = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Scroll to top on route change
   React.useEffect(() => {
     window.scrollTo(0, 0);
+    setMobileMenuOpen(false);
   }, [pathname]);
 
   return (
     <>
       <nav className="nav-clean sticky top-0 z-50 border-b border-black/5 bg-white/85 backdrop-blur-md">
-        <div className="container flex h-20 max-w-7xl items-center justify-between">
+        <div className="relative container flex h-16 max-w-7xl items-center justify-between sm:h-20">
           <Link
             to="/"
-            className="group flex items-center gap-3 no-underline transition-opacity hover:opacity-80"
+            className="group no-underline transition-opacity hover:opacity-80"
           >
             <span className="text-head flex items-baseline gap-0.5 text-xl font-bold tracking-tighter">
               Juheon
@@ -58,7 +60,49 @@ export default function App() {
               2017년 전국기능경기대회
             </Link>
           </div>
+
+          <button
+            type="button"
+            aria-label={mobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-white/90 text-lg font-bold md:hidden"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+          >
+            {mobileMenuOpen ? "✕" : "☰"}
+          </button>
         </div>
+
+        {mobileMenuOpen && (
+          <div
+            id="mobile-navigation"
+            className="absolute inset-x-0 top-full border-b border-black/5 bg-white/95 backdrop-blur md:hidden"
+          >
+            <div className="container flex flex-col gap-1 py-2">
+              <Link
+                to="/2016-national"
+                className="nav-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                2016년 전국기능경기대회
+              </Link>
+              <Link
+                to="/2017-local"
+                className="nav-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                2017년 지방기능경기대회
+              </Link>
+              <Link
+                to="/2017-national"
+                className="nav-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                2017년 전국기능경기대회
+              </Link>
+            </div>
+          </div>
+        )}
       </nav>
 
       <main className="min-h-screen grow bg-gray-50">

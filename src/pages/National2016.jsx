@@ -59,11 +59,12 @@ export default function National2016() {
         <span className="bg-accent/20 flex h-8 w-8 items-center justify-center rounded-lg text-lg">
           🚀
         </span>
-        Inside Seoul 구현 및 테스트 가이드
+        Inside Seoul 구현 및 <br className="hidden md:block lg:hidden" /> 테스트
+        가이드
       </h4>
 
       <div className="flex flex-col gap-10">
-        <div className="relative space-y-10 before:absolute before:top-2 before:bottom-2 before:left-3.75 before:w-0.5 before:bg-black/5">
+        <div className="relative flex flex-col gap-10 before:absolute before:top-2 before:bottom-2 before:left-3.75 before:w-0.5 before:bg-black/5">
           {/* Step 1 */}
           <div className="relative pl-10">
             <div className="border-accent text-head absolute top-1.5 left-0 h-8 w-8 rounded-full border-2 bg-white text-center text-xs leading-7 font-bold shadow-sm">

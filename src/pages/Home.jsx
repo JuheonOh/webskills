@@ -46,18 +46,18 @@ export default function Home() {
       </Helmet>
 
       {/* ── Hero Section ── */}
-      <section className="bg-primary relative flex min-h-[85vh] w-full items-center pt-20 lg:pt-0">
-        <div className="container grid h-full max-w-7xl grid-cols-1 items-center gap-16 lg:grid-cols-2">
+      <section className="bg-primary min-h-72vh md:min-h-85vh relative flex w-full items-center px-4 pt-16 md:px-0 md:pt-20 lg:pt-0">
+        <div className="container grid h-full max-w-6xl grid-cols-1 items-center gap-10 sm:gap-14 lg:grid-cols-2">
           {/* Left: Content */}
-          <div className="animate-enter z-10 order-2 flex max-w-2xl flex-col gap-8 pb-12 lg:order-1 lg:pb-0">
+          <div className="animate-enter z-10 order-2 flex flex-1 flex-col gap-8 pb-12 lg:order-1 lg:pb-0">
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2">
                 <span className="bg-accent mb-1 rounded-full px-3 py-1 text-[10px] font-bold tracking-widest text-black uppercase">
                   Established 2016
                 </span>
               </div>
-              <h1 className="text-head -ml-1 text-7xl leading-[1.2] font-extrabold tracking-tight">
-                디지털의 완벽함을 <br />
+              <h1 className="text-head -ml-1 text-4xl leading-[1.2] font-extrabold tracking-tight sm:text-5xl md:text-7xl lg:text-7xl">
+                디지털의 완벽함을
                 <span className="relative mt-2 inline-block">
                   빚어내다.
                   <svg
@@ -78,7 +78,7 @@ export default function Home() {
               </h1>
             </div>
 
-            <p className="text-body max-w-lg text-lg leading-relaxed break-keep">
+            <p className="text-body max-w-xl text-base leading-relaxed break-keep sm:text-lg">
               기능경기대회 웹디자인 및 개발 직종의 모든 기록.
               <br className="hidden lg:block" />
               극한의 제약 속에서 피어난 코드와 디자인,
@@ -86,7 +86,7 @@ export default function Home() {
               <strong>가장 순수한 열정</strong>을 아카이빙합니다.
             </p>
 
-            <div className="mt-2 flex flex-wrap gap-4">
+            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
               <Link to="/2016-national" className="btn-primary">
                 구현 결과물 자세히 보기
               </Link>
@@ -100,7 +100,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="mt-8 flex items-center gap-6 border-t border-black/5 pt-8">
+            <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-black/5 pt-8">
               <div className="flex flex-col">
                 <span className="text-head text-2xl font-bold">3</span>
                 <span className="text-muted text-xs font-medium tracking-wider uppercase">
@@ -118,19 +118,19 @@ export default function Home() {
           </div>
 
           {/* Right: Graphic */}
-          <div className="animate-enter relative order-1 flex h-125 w-full items-center justify-center delay-200 lg:order-2 lg:h-full">
-            <div className="animate-float relative h-115 w-[320px] lg:h-150 lg:w-120">
+          <div className="animate-enter relative order-1 flex w-full items-center justify-center pb-10 delay-200 lg:order-2 lg:h-full lg:pb-0">
+            <div className="animate-float relative h-70 w-80 sm:h-80 sm:w-88 lg:h-150 lg:w-120">
               <div className="absolute top-0 right-0 h-full w-full rotate-6 transform rounded-[40px] bg-[#D4D6D2] transition-transform duration-1000 group-hover:rotate-12"></div>
               <div className="bg-accent absolute top-0 right-0 h-full w-full rotate-3 transform rounded-[40px] opacity-90 shadow-xl transition-transform duration-1000 group-hover:rotate-6"></div>
               <div className="bg-surface absolute inset-0 transform overflow-hidden rounded-[40px] shadow-2xl transition-transform duration-700 hover:-translate-y-4">
                 <div className="relative h-full w-full bg-[#FAFAFA]">
-                  <div className="flex h-20 items-center gap-4 border-b border-black/5 px-8">
+                  <div className="flex h-20 items-center gap-4 border-b border-black/5 px-5 sm:px-8">
                     <div className="h-3 w-3 rounded-full bg-[#E5E5E5]"></div>
                     <div className="h-3 w-3 rounded-full bg-[#E5E5E5]"></div>
                     <div className="flex-1"></div>
                     <div className="bg-accent h-8 w-8 rounded-full"></div>
                   </div>
-                  <div className="flex flex-col gap-6 p-8">
+                  <div className="flex flex-col gap-6 p-5 sm:p-7 lg:p-8">
                     <div className="bg-primary h-12 w-2/3 animate-pulse rounded-xl"></div>
                     <div className="flex gap-4">
                       <div className="h-32 w-full rounded-2xl bg-[#F1F1F1]"></div>
@@ -154,13 +154,13 @@ export default function Home() {
       </section>
 
       {/* ── Projects Section ── */}
-      <section className="max-w-8xl container py-32">
+      <section className="max-w-8xl container py-20 sm:py-24 lg:py-32">
         <div className="animate-enter mb-8 flex flex-col justify-between delay-300 md:flex-row md:items-end">
           <div>
-            <h2 className="text-head mb-4 text-4xl font-bold tracking-tight lg:text-5xl">
+            <h2 className="text-head mb-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
               Selected Works
             </h2>
-            <p className="text-body max-w-2xl text-lg">
+            <p className="text-body max-w-2xl text-base sm:text-lg">
               치열했던 대회 현장의 고민과 해결 과정이 담긴
               <br className="hidden md:block" />
               실제 웹사이트 구현 결과물입니다.
