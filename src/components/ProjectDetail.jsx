@@ -131,6 +131,7 @@ export default function ProjectDetail({
   requirements,
   designSpecs,
   task3,
+  task4,
   layoutConfig = { iframeFullWidth: false },
 }) {
   return (
@@ -286,6 +287,48 @@ export default function ProjectDetail({
           heightClass="h-70vh min-h-420 md:min-h-560 lg:min-h-680"
         />
       </div>
+
+      {task4 && (
+        <div className="mx-auto mb-28 max-w-7xl border-t border-black/5 pt-16 sm:pt-24 md:mb-36">
+          <div className="bg-surface shadow-soft rounded-4xl border border-black/5 p-7 sm:p-10">
+            <h3 className="text-head text-2xl font-extrabold tracking-tight sm:text-3xl">
+              {task4.title}
+            </h3>
+            <p className="text-body mt-4 text-base leading-relaxed sm:text-[1.125rem]">
+              {task4.description}
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a
+                href={task4.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-head hover:bg-head/90 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-colors sm:text-base"
+              >
+                Task 4 새 탭으로 열기
+                <svg
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path>
+                </svg>
+              </a>
+
+              <code className="text-muted rounded-full bg-black/4 px-4 py-2 text-xs break-all sm:text-sm">
+                {task4.url}
+              </code>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

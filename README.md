@@ -29,6 +29,8 @@
 
 [실행방법 문서](https://github.com/JuheonOh/webskills/blob/main/RUN.md) 참고
 
+Task4 멀티 브랜치(OCI) 배포 문서: `ops/task4/README.md`
+
 ## 직종정의
 
 - 웹디자인 및 개발 직종은 웹사이트를 제작‧배포하는데 필요한 지식 및 기술, 태도 등을 활용하여, 가상 고객의 다양한 요구사항에 따라 실제로 운영이 가능한 수준의 완전한 웹사이트를 제작하는 직종이다.
