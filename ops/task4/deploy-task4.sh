@@ -45,7 +45,8 @@ prepare_worktree() {
   local branch="${SERVICE_BRANCH[$service]}"
   local worktree="${BRANCHES_DIR}/${SERVICE_WORKTREE[$service]}"
 
-  if [[ ! -d "${worktree}/.git" ]]; then
+  # Git worktree uses a .git file (not a directory) in the worktree path.
+  if [[ ! -e "${worktree}/.git" ]]; then
     echo "[worktree] creating ${worktree} (${branch})"
     git -C "${REPO_DIR}" fetch origin "${branch}"
     git -C "${REPO_DIR}" worktree add -B "${branch}" "${worktree}" "origin/${branch}"
