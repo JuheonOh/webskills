@@ -34,7 +34,7 @@ require_command() {
 prepare_repo() {
   mkdir -p "${BASE_DIR}" "${BRANCHES_DIR}" "${ENV_DIR}"
 
-  if [[ ! -d "${REPO_DIR}/.git" ]]; then
+  if [[ ! -e "${REPO_DIR}/.git" ]]; then
     echo "[repo] cloning ${REPO_URL} -> ${REPO_DIR}"
     git clone "${REPO_URL}" "${REPO_DIR}"
   fi
