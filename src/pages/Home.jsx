@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Card from "../components/Card";
@@ -6,11 +6,38 @@ import Card from "../components/Card";
 // Projects Data
 const projects = [
   {
+    to: "/2015-local",
+    tag: "LOCAL",
+    year: "2015",
+    title: "2015년 지방기능경기대회",
+    desc: "2015 지방대회 Task4 서버사이드 결과물을 새 탭에서 확인할 수 있습니다.",
+    img: "images/screenshots/2015-local.jpg",
+    imgAlt: "2015 Local Project Screenshot",
+  },
+  {
+    to: "/2015-national",
+    tag: "NATIONAL",
+    year: "2015",
+    title: "2015년 전국기능경기대회",
+    desc: "2015 전국대회 Task4 서버사이드 결과물을 새 탭에서 확인할 수 있습니다.",
+    img: "images/screenshots/2015-national.jpg",
+    imgAlt: "2015 National Project Screenshot",
+  },
+  {
+    to: "/2016-local",
+    tag: "LOCAL",
+    year: "2016",
+    title: "2016년 지방기능경기대회",
+    desc: "2016 지방대회 Task4 서버사이드 결과물을 새 탭에서 확인할 수 있습니다.",
+    img: "images/screenshots/2016-local.jpg",
+    imgAlt: "2016 Local Project Screenshot",
+  },
+  {
     to: "/2016-national",
     tag: "NATIONAL",
     year: "2016",
-    title: "제51회 전국기능경기대회",
-    desc: "CSS Skew 변형과 Checkbox Hack을 활용한 Pure CSS 기반의 '아름누리 예술재단' 사이트. SVG 지도와 Canvas 실시간 미디어 프로세싱이 적용된 SPA를 포함합니다.",
+    title: "2016년 전국기능경기대회",
+    desc: "아름누리 예술단 주제로 구현한 프로젝트입니다. CSS 기반 인터랙션과 SVG·Canvas 연동 구성을 확인할 수 있습니다.",
     img: "images/screenshots/2016-national.jpg",
     imgAlt: "2016 National Project Screenshot",
   },
@@ -18,8 +45,8 @@ const projects = [
     to: "/2017-local",
     tag: "LOCAL",
     year: "2017",
-    title: "광주광역시 지방기능경기대회",
-    desc: "1440px 와이드 레이아웃과 정교한 타이포그래피가 돋보이는 서울 여행 가이드. 레거시 환경을 가정한 app.js 단일 파일 기반의 동적 DOM 제어 기술을 다룹니다.",
+    title: "2017년 지방기능경기대회",
+    desc: "서울 여행 가이드를 주제로 제작한 프로젝트입니다. app.js 단일 파일 기반의 동적 DOM 제어와 인터랙션을 포함합니다.",
     img: "images/screenshots/2017-local.jpg",
     imgAlt: "2017 Local Project Screenshot",
   },
@@ -27,8 +54,8 @@ const projects = [
     to: "/2017-national",
     tag: "NATIONAL",
     year: "2017",
-    title: "제52회 전국기능경기대회",
-    desc: "3D Flip 슬라이더와 WebSQL 클라이언트 DB를 활용한 '제주 위키' 앱. LocalStorage 기반의 상태 유지와 무한 스크롤 등 고도화된 웹 기술의 집약체입니다.",
+    title: "2017년 전국기능경기대회",
+    desc: "제주 관광을 주제로 한 프로젝트입니다. 3D 전환 효과와 WebSQL·LocalStorage 기반 상태 관리 기능을 포함합니다.",
     img: "images/screenshots/2017-national.jpg",
     imgAlt: "2017 National Project Screenshot",
   },
@@ -41,11 +68,11 @@ export default function Home() {
         <title>WebSkills Archive - WorldSkills Korea Projects</title>
         <meta
           name="description"
-          content="Archive of WorldSkills Korea web design projects (2016-2017). Explore the evolution of web technologies and interactive design by Juheon Oh."
+          content="Archive of WorldSkills Korea web design projects (2015-2017). Explore the evolution of web technologies and interactive design by Juheon Oh."
         />
       </Helmet>
 
-      {/* ── Hero Section ── */}
+      {/* Hero Section */}
       <section className="bg-primary min-h-72vh md:min-h-85vh relative flex w-full items-center px-4 pt-16 md:px-0 md:pt-20 lg:pt-0">
         <div className="container grid h-full max-w-6xl grid-cols-1 items-center gap-10 sm:gap-14 lg:grid-cols-2">
           {/* Left: Content */}
@@ -57,9 +84,9 @@ export default function Home() {
                 </span>
               </div>
               <h1 className="text-head -ml-1 text-4xl leading-[1.2] font-extrabold tracking-tight sm:text-5xl md:text-7xl lg:text-7xl">
-                디지털의 완벽함을
+                도전의 기록을
                 <span className="relative mt-2 inline-block">
-                  빚어내다.
+                  이어갑니다.
                   <svg
                     className="absolute -bottom-2 left-0 -z-10 w-full"
                     viewBox="0 0 300 20"
@@ -79,11 +106,11 @@ export default function Home() {
             </div>
 
             <p className="text-body max-w-xl text-base leading-relaxed break-keep sm:text-lg">
-              기능경기대회 웹디자인 및 개발 직종의 모든 기록.
+              기능경기대회 웹디자인/개발 과제 아카이브입니다.
               <br className="hidden lg:block" />
-              극한의 제약 속에서 피어난 코드와 디자인,
-              <br className="hidden lg:block" />그{" "}
-              <strong>가장 순수한 열정</strong>을 아카이빙합니다.
+              제약이 강한 실전 환경에서 만들어진 코드와 결과물을
+              <br className="hidden lg:block" />
+              한 곳에서 확인할 수 있습니다.
             </p>
 
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
@@ -102,7 +129,7 @@ export default function Home() {
 
             <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-black/5 pt-8">
               <div className="flex flex-col">
-                <span className="text-head text-2xl font-bold">3</span>
+                <span className="text-head text-2xl font-bold">{projects.length}</span>
                 <span className="text-muted text-xs font-medium tracking-wider uppercase">
                   Major Projects
                 </span>
@@ -153,7 +180,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Projects Section ── */}
+      {/* Projects Section */}
       <section className="max-w-8xl container py-20 sm:py-24 lg:py-32">
         <div className="animate-enter mb-8 flex flex-col justify-between delay-300 md:flex-row md:items-end">
           <div>
@@ -161,9 +188,9 @@ export default function Home() {
               Selected Works
             </h2>
             <p className="text-body max-w-2xl text-base sm:text-lg">
-              치열했던 대회 현장의 고민과 해결 과정이 담긴
+              연도별 기능경기대회 과제를 한눈에 살펴보고
               <br className="hidden md:block" />
-              실제 웹사이트 구현 결과물입니다.
+              구현 결과물과 기술 포인트를 확인해보세요.
             </p>
           </div>
           <div className="hidden pb-2 md:block">

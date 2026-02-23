@@ -3,6 +3,9 @@ import { Routes, Route, Link, useLocation } from "react-router-dom";
 
 // Lazy load pages for code splitting
 const Home = React.lazy(() => import("./pages/Home"));
+const Local2015 = React.lazy(() => import("./pages/Local2015"));
+const National2015 = React.lazy(() => import("./pages/National2015"));
+const Local2016 = React.lazy(() => import("./pages/Local2016"));
 const National2016 = React.lazy(() => import("./pages/National2016"));
 const Local2017 = React.lazy(() => import("./pages/Local2017"));
 const National2017 = React.lazy(() => import("./pages/National2017"));
@@ -42,22 +45,40 @@ export default function App() {
 
           <div className="hidden gap-1 md:flex">
             <Link
+              to="/2015-local"
+              className={`nav-link ${pathname === "/2015-local" ? "active" : ""}`}
+            >
+              2015 지방
+            </Link>
+            <Link
+              to="/2015-national"
+              className={`nav-link ${pathname === "/2015-national" ? "active" : ""}`}
+            >
+              2015 전국
+            </Link>
+            <Link
+              to="/2016-local"
+              className={`nav-link ${pathname === "/2016-local" ? "active" : ""}`}
+            >
+              2016 지방
+            </Link>
+            <Link
               to="/2016-national"
               className={`nav-link ${pathname === "/2016-national" ? "active" : ""}`}
             >
-              2016년 전국기능경기대회
+              2016 전국
             </Link>
             <Link
               to="/2017-local"
               className={`nav-link ${pathname === "/2017-local" ? "active" : ""}`}
             >
-              2017년 지방기능경기대회
+              2017 지방
             </Link>
             <Link
               to="/2017-national"
               className={`nav-link ${pathname === "/2017-national" ? "active" : ""}`}
             >
-              2017년 전국기능경기대회
+              2017 전국
             </Link>
           </div>
 
@@ -79,6 +100,27 @@ export default function App() {
             className="absolute inset-x-0 top-full border-b border-black/5 bg-white/95 backdrop-blur md:hidden"
           >
             <div className="container flex flex-col gap-1 py-2">
+              <Link
+                to="/2015-local"
+                className="nav-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                2015년 지방기능경기대회
+              </Link>
+              <Link
+                to="/2015-national"
+                className="nav-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                2015년 전국기능경기대회
+              </Link>
+              <Link
+                to="/2016-local"
+                className="nav-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                2016년 지방기능경기대회
+              </Link>
               <Link
                 to="/2016-national"
                 className="nav-link"
@@ -109,6 +151,9 @@ export default function App() {
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/2015-local" element={<Local2015 />} />
+            <Route path="/2015-national" element={<National2015 />} />
+            <Route path="/2016-local" element={<Local2016 />} />
             <Route path="/2016-national" element={<National2016 />} />
             <Route path="/2017-local" element={<Local2017 />} />
             <Route path="/2017-national" element={<National2017 />} />

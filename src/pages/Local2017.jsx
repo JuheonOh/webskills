@@ -170,7 +170,7 @@ export default function Local2017() {
     title: "Task 4: Our Blog (Server Side)",
     description:
       "Task 4 서버사이드 구현은 OCI 환경에서 별도로 운영됩니다. 로그인/세션 안정성을 위해 GitHub Pages 내 iframe 대신 새 탭으로 연결합니다.",
-    url: "https://<TASK4_HOST>/task4/2017-local/",
+    url: "http://2017-local.134.185.111.209.nip.io/",
   };
 
   return (
